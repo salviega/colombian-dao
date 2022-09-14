@@ -1,5 +1,6 @@
 import React from 'react';
 import { HashRouter } from 'react-router-dom';
+import { MindFooter } from '../MindFooter';
 import { MindMenu } from '../MindMenu';
 import './App.scss';
 
@@ -8,6 +9,7 @@ function App() {
     <React.Fragment>
       <HashRouter>
         <MindMenu />
+        <MindFooter />
       </HashRouter>
     </React.Fragment>
   );

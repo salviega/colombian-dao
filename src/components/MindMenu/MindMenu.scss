@@ -57,7 +57,13 @@ header {
         width: 100%;
 
         &__item {
+          font-size: 18px;
           max-width: max-content;
+
+          &--active {
+            border-bottom: 2px solid black;
+            opacity: 0.8;
+          }
            
           a {
             text-align: center;
@@ -70,20 +76,15 @@ header {
             &:hover {
               border: 1.5px solid black;
               border-bottom: 2px solid black;
-              padding: 1.2px;
+              padding: 1.6px;
               outline: 1px solid black;  
             }
-          }
-
-          &--active {
-            border-bottom: 2px solid black;
-            opacity: 0.8;
           }
         }
 
         &__button {
           max-width: max-content;
-          padding-right: 52px;
+          padding-right: 31px;
           button {
             max-width: max-content;
           }
