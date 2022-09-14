@@ -9,6 +9,11 @@ function App() {
     <React.Fragment>
       <HashRouter>
         <MindMenu />
+        <main>
+          <div className='main__container'>
+            dsdsds
+          </div>
+        </main>
         <MindFooter />
       </HashRouter>
     </React.Fragment>
