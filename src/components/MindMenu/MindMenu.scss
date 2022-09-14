@@ -68,9 +68,10 @@ header {
             // }
 
             &:hover {
-              border: 0.7px solid black;
-              outline: 1.8px solid black;  
+              border: 1.5px solid black;
+              border-bottom: 2px solid black;
               padding: 1.2px;
+              outline: 1px solid black;  
             }
           }
 
