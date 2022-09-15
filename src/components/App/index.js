@@ -9,6 +9,7 @@ import { ColombianApply } from '../ColombianApply';
 import { ColombianHome } from '../ColombianHome';
 import { ColombianProjects } from '../ColombianProjects';
 import { ColombianAbout } from '../ColombianAbout';
+import { ColombianMyProposals } from '../ColombianMyProposals';
 
 function App() {
   
@@ -23,9 +24,10 @@ function App() {
             <div className='main__container'>
               <Routes>
                 <Route path='/' element={ <ColombianHome />} />
-                <Route path='/form' element={ <ColombianApply />} />
-                <Route path='/projects' element={ <ColombianProjects />} />
                 <Route path='/about' element={ <ColombianAbout />} />
+                <Route path='/projects' element={ <ColombianProjects />} />
+                <Route path='/proposals' element={ <ColombianMyProposals />} />
+                <Route path='/form' element={ <ColombianApply />} />
               </Routes>
             </div>
           </main>
