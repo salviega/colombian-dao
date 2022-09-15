@@ -1,20 +1,27 @@
 import React from 'react';
 import { HashRouter } from 'react-router-dom';
-import { MindFooter } from '../MindFooter';
-import { MindMenu } from '../MindMenu';
+import { ColombianWallet } from '../ColombianWallet';
+import { ColombianFooter } from '../ColombianFooter';
+import { ColombianMenu } from '../ColombianMenu';
+import { AuthProvider } from '../../hooks/useAuth';
 import './App.scss';
 
 function App() {
+  
   return (
     <React.Fragment>
       <HashRouter>
-        <MindMenu />
-        <main>
-          <div className='main__container'>
-            dsdsds
-          </div>
-        </main>
-        <MindFooter />
+        <AuthProvider>
+          <ColombianMenu>
+            <ColombianWallet />
+          </ColombianMenu>
+          <main>
+            <div className='main__container'>
+              dsdsds
+            </div>
+          </main>
+          <ColombianFooter />
+        </AuthProvider>
       </HashRouter>
     </React.Fragment>
   );

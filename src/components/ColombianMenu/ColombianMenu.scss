@@ -60,11 +60,6 @@ header {
           font-size: 18px;
           max-width: max-content;
 
-          &--active {
-            border-bottom: 2px solid black;
-            opacity: 0.8;
-          }
-           
           a {
             text-align: center;
             color: inherit;
@@ -80,6 +75,12 @@ header {
               outline: 1px solid black;  
             }
           }
+          
+          &--active {
+            border-bottom: 2px solid black;
+            opacity: 0.8 !important;
+          }
+           
         }
 
         &__button {

@@ -1,9 +1,9 @@
-import './MindFooter.scss'
+import './ColombianFooter.scss'
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-icons'
 
-export function MindFooter() {
+export function ColombianFooter() {
   return (
     <footer>
       <div className='footer-container'>
