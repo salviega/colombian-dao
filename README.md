@@ -4,7 +4,7 @@ Colombian DAO: Dapps
 
 ### Vercel deploy
 
-Vercel url: xxx
+Vercel url: https://colombian-dao.vercel.app/
 
 ## Quick start 🏄
 
