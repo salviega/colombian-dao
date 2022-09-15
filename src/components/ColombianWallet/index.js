@@ -46,7 +46,7 @@ export function ColombianWallet() {
 
   return (
     <button className='button-wallet' onClick={connectWallet}>
-      {loading ? 'loading...' : isRegisted || isVerified ? '...' + String(auth.user.walletAddress).slice(38) : 'Connect your Wallet'}
+      {loading ? 'loading...' : isRegisted || isVerified ? '...' + String(auth.user.walletAddress).slice(36) : 'Connect your Wallet'}
     </button>
   )
 }

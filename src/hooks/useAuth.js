@@ -31,7 +31,7 @@ export function AuthProvider({children}) {
   export function AuthRoute(props) {
     const auth = useAuth()
 
-    if (!auth.user) {
+    if(auth.user.walletAddress === 'Connect your wallet') {
       return <Navigate to='/' />
     }
     

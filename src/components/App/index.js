@@ -1,10 +1,14 @@
+import './App.scss';
 import React from 'react';
-import { HashRouter } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
+import { AuthProvider } from '../../hooks/useAuth';
 import { ColombianWallet } from '../ColombianWallet';
 import { ColombianFooter } from '../ColombianFooter';
 import { ColombianMenu } from '../ColombianMenu';
-import { AuthProvider } from '../../hooks/useAuth';
-import './App.scss';
+import { ColombianApply } from '../ColombianApply';
+import { ColombianHome } from '../ColombianHome';
+import { ColombianProjects } from '../ColombianProjects';
+import { ColombianAbout } from '../ColombianAbout';
 
 function App() {
   
@@ -17,7 +21,12 @@ function App() {
           </ColombianMenu>
           <main>
             <div className='main__container'>
-              dsdsds
+              <Routes>
+                <Route path='/' element={ <ColombianHome />} />
+                <Route path='/form' element={ <ColombianApply />} />
+                <Route path='/projects' element={ <ColombianProjects />} />
+                <Route path='/about' element={ <ColombianAbout />} />
+              </Routes>
             </div>
           </main>
           <ColombianFooter />
