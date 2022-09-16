@@ -5,8 +5,6 @@ import { useAuth } from '../../hooks/useAuth';
 
 export function ColombianWallet() {
   const [loading, setLoading] = React.useState(false)
-  const [isVerified, setIsVerified] = React.useState(false)
-  const [isRegisted, setIsRegisted] = React.useState(false)
   const auth = useAuth()
 
   const connectWallet = async () => {
@@ -31,14 +29,10 @@ export function ColombianWallet() {
       }
       auth.login({ walletAddress: accounts[0] })
       setLoading(false)
-      setIsRegisted(true)
-      setIsVerified(true)
+
     } else {
       auth.logout()
-      //dispatch(authLoguotAction())
       setLoading(false)
-      setIsRegisted(false)
-      setIsVerified(false)
 
       // if (window.location.href.includes('mypensions') || window.location.href.includes('register')) 
     }
