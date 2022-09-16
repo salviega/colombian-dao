@@ -16,7 +16,7 @@ import { ColombianError } from '../ColombianError';
 function App() {
   
   return (
-    <div class='app__wrapper'>
+    <div className='app__wrapper'>
       <HashRouter>
         <AuthProvider>
           <ColombianMenu>

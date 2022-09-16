@@ -9,7 +9,7 @@ export function ColombianError() {
         <h2 className='error-container__title'>Error 404</h2>
         <h4 className='error-container__description'>Opps! Page not found</h4>
         <p>Sorry, the page you're looking for doesn't exist</p>
-        <div class='error-container__button'>
+        <div className='error-container__button'>
           <Link to='/'>Home</Link>
         </div>
       </div>

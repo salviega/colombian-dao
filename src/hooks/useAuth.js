@@ -8,15 +8,17 @@ const AuthContext = React.createContext();
 export function AuthProvider({ children }) {
   const navigate = useNavigate();
   const [user, setUser] = React.useState({
-    walletAddress: "Connect your wallet",
+    walletAddress: localStorage.getItem('wallet') || 'Connect your wallet',
   });
 
   const login = ({ walletAddress }) => {
+    localStorage.setItem('wallet', walletAddress)
     const isAdmin = walletAdmin === walletAddress;
     setUser({ walletAddress, isAdmin });
   };
 
   const logout = () => {
+    localStorage.clear()
     setUser({ walletAddress: "Connect your wallet" });
     navigate("/");
   };
