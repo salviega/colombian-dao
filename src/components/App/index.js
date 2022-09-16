@@ -10,6 +10,8 @@ import { ColombianHome } from '../ColombianHome';
 import { ColombianProjects } from '../ColombianProjects';
 import { ColombianAbout } from '../ColombianAbout';
 import { ColombianMyProposals } from '../ColombianMyProposals';
+import { ColombianCollection } from '../ColombianCollection';
+import { ColombianError } from '../ColombianError';
 
 function App() {
   
@@ -25,9 +27,11 @@ function App() {
               <Routes>
                 <Route path='/' element={ <ColombianHome />} />
                 <Route path='/about' element={ <ColombianAbout />} />
+                <Route path='/collection' element={ <ColombianCollection />} />
                 <Route path='/projects' element={ <ColombianProjects />} />
                 <Route path='/proposals' element={ <ColombianMyProposals />} />
                 <Route path='/form' element={ <ColombianApply />} />
+                <Route path='*' element={ <ColombianError />} />
               </Routes>
             </div>
           </main>

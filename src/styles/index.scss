@@ -4,6 +4,7 @@
 *::after,
 *::before {
   box-sizing: content-box;
+  outline: none;
   width: 100%;
 }
 html,
