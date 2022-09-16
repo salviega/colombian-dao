@@ -16,7 +16,7 @@ import { ColombianError } from '../ColombianError';
 function App() {
   
   return (
-    <React.Fragment>
+    <div class='app__wrapper'>
       <HashRouter>
         <AuthProvider>
           <ColombianMenu>
@@ -38,7 +38,7 @@ function App() {
           <ColombianFooter />
         </AuthProvider>
       </HashRouter>
-    </React.Fragment>
+    </div>
   );
 }
 
