@@ -4,12 +4,14 @@
 /node_modules
 /.pnp
 .pnp.js
+src/blockchain/subgraph/colombian-dao-market/node_modules
 
 # testing
 /coverage
 
 # production
 /build
+src/blockchain/subgraph/colombian-dao-market/build
 
 # misc
 .DS_Store
