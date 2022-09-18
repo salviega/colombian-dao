@@ -37,7 +37,6 @@
     justify-items: center;
     margin-bottom: 24px;
 
-
     &__card { 
       cursor: pointer;
       margin-top: 10px;
@@ -70,6 +69,32 @@
       width: 271px;
       height: 112px;
       margin: 12px;
+    }
+
+    &__buy {
+      position: relative;
+      left: 30%;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      max-width: max-content;
+      margin: 0;
+      padding: 0;
+
+      a {
+        display: inline-block;
+        text-decoration: none;
+        border: 2px solid #69a6ce;
+        color: #69a6ce;
+        padding: 10px 25px;
+        border-radius: 25px;
+        transition: all 0.35s ease;
+        
+        &:hover{
+          background: #69a6ce;
+          color: #fff;
+        }
+      }
     }
   }
 

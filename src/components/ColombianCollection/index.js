@@ -1,9 +1,13 @@
 import './ColombianCollection.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEthereum } from '@fortawesome/free-brands-svg-icons'
 import collection from '../../asserts/json/collection.json'
 import banner from '../../asserts/images/collection-banner-horizontal.jpg'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { ColombianLoading } from '../ColombianLoading'
 import { getDataColombianSubGraph } from '../../middleware/getDataColombianSubGraph'
+
 
 export function ColombianCollection() {
   const { getItemsForSale } = getDataColombianSubGraph() 
@@ -38,7 +42,10 @@ export function ColombianCollection() {
                         <img src={image} alt='logo' />
                       </figure>
                       <div className='collection-cards__description'>
-
+                        <FontAwesomeIcon icon={faEthereum} /> 
+                      <div className='collection-cards__buy'>
+                        <Link to='/'>Buy now</Link>
+                      </div>
                       </div>
                     </div>
                   </>
@@ -52,7 +59,6 @@ export function ColombianCollection() {
 }
 
 const images = [
-  "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi2.wp.com%2Fnypost.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2014%2F04%2Fgabriel-garcia-marquez.jpg%3Fquality%3D90%26strip%3Dall%26ssl%3D1&f=1&nofb=1",
   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi2.wp.com%2Fnypost.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2014%2F04%2Fgabriel-garcia-marquez.jpg%3Fquality%3D90%26strip%3Dall%26ssl%3D1&f=1&nofb=1",
   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi2.wp.com%2Fnypost.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2014%2F04%2Fgabriel-garcia-marquez.jpg%3Fquality%3D90%26strip%3Dall%26ssl%3D1&f=1&nofb=1",
   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi2.wp.com%2Fnypost.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2014%2F04%2Fgabriel-garcia-marquez.jpg%3Fquality%3D90%26strip%3Dall%26ssl%3D1&f=1&nofb=1",
