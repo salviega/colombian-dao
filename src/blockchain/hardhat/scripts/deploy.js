@@ -21,12 +21,12 @@ async function main () {
   console.log('Colombian Dao market contract was deployein to block number: ' + await colombianDaoMarketContract.provider.getBlockNumber())
 
   const addresses = [
-    { feedContract: feedContract.address,
+    { feedcontract: feedContract.address,
       blocknumber: await feedContract.provider.getBlockNumber()
     },
     {
       Nftcontract: nftContract.address,
-      blocknumber: await colombianDaoMarketContract.provider.getBlockNumber()
+      blocknumber: await nftContract.provider.getBlockNumber()
     },
     {
       colombianDaoMarketContract: colombianDaoMarketContract.address,

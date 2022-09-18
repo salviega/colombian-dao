@@ -1,9 +1,8 @@
 .collection {
-
   &__banner {
     margin: 0;
     padding: 0;
-    
+
     img {
       height: 135px;
       width: 100%;
@@ -15,8 +14,7 @@
     padding: 0 16px;
   }
 
-  &__description 
-  {
+  &__description {
     font-size: 16px;
     line-height: 22.5px;
     padding: 0 16px;
@@ -37,12 +35,12 @@
     justify-items: center;
     margin-bottom: 24px;
 
-    &__card { 
+    &__card {
       cursor: pointer;
       margin-top: 10px;
       border-radius: 6px;
       height: 431px;
-      width: 295px; 
+      width: 295px;
       box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 
       figure {
@@ -50,14 +48,14 @@
         padding: 0px;
         border-top-left-radius: 6px;
         border-top-right-radius: 6px;
-        height: 300px;
+        height: 285px;
         overflow: hidden;
 
         img {
-          width: 295px; 
+          width: 295px;
           height: 295px;
-          transition: transform .3s ease;
-  
+          transition: transform 0.3s ease;
+
           &:hover {
             transform: scale(1.1);
           }
@@ -65,34 +63,81 @@
       }
     }
 
-    &__description {
+    &-description {
       width: 271px;
       height: 112px;
       margin: 12px;
-    }
 
-    &__buy {
-      position: relative;
-      left: 30%;
-      display: flex;
-      align-content: center;
-      justify-content: center;
-      max-width: max-content;
-      margin: 0;
-      padding: 0;
+      &__title {
+        font-size: 16px;
+        margin: 12px 0px;
+        max-width: max-content;
+        p {
+          max-width: max-content;
+        }
+      }
 
-      a {
-        display: inline-block;
-        text-decoration: none;
-        border: 2px solid #69a6ce;
-        color: #69a6ce;
-        padding: 10px 25px;
-        border-radius: 25px;
-        transition: all 0.35s ease;
+      &__price {
+        font-size: 12px;
+        margin: 0px;
+        max-width: max-content;
+        p {
+          max-width: max-content;
+        }
+      }
+      &-container {
+        margin: 0px;
+        padding-left: 3px;
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+        max-width: max-content;
+
+        &__attribute {
+          font-size: 14px;
+          margin: 12px 0px;
+          max-width: max-content;
+          p {
+            max-width: max-content;
+          }
+        }
+
+        &__currency {
+          color: #b0b0b0;
+          font-size: 12px;
+          margin: 12px 0px;
+          padding-top: 3px;
+          max-width: max-content;
+          p {
+            max-width: max-content;
+          }
+        }
+      }
+
+      &__buy {
+        position: relative;
+        left: 30%;
+        top: -3.5%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        max-width: max-content;
+        margin: 0;
+        padding: 0;
         
-        &:hover{
-          background: #69a6ce;
-          color: #fff;
+        a {
+          display: inline-block;
+          text-decoration: none;
+          border: 2px solid #69a6ce;
+          color: #69a6ce;
+          padding: 10px 25px;
+          border-radius: 25px;
+          transition: all 0.35s ease;
+
+          &:hover {
+            background: #69a6ce;
+            color: #fff;
+          }
         }
       }
     }
