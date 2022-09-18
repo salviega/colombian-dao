@@ -35,5 +35,5 @@ module.exports = {
       saveDeployments: true
     }
   },
-  solidity: '0.8.14'
+  solidity: '0.8.15'
 }

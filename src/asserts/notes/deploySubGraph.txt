@@ -1,6 +1,10 @@
 Step by Step: Deploy a subgraph.
 
 npx hardhat compile
+
+npx hardhat node
+npx hardhat run --network localhost src/blockchain/hardhat/scripts/deploy.js 
+
 npx hardhat run --network goerli src/blockchain/hardhat/scripts/deploy.js 
 npx hardhat verify --network goerli <AddressContract>
 -- go to the graph studio and create a subgraph project
