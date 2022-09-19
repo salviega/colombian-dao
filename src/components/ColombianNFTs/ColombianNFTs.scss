@@ -1,7 +1,29 @@
-collection-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+.collection-cards {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-items: center;
-  margin-bottom: 24px;
+}
+
+// tablets
+@media screen and (min-width: 40em) and (max-width: 63.9em) {
+  .collection-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 24px;
+  }
+}
+
+//web
+@media screen and (min-width: 64em) {
+  .collection-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 24px;
+  }
 }

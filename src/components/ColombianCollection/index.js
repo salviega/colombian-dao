@@ -50,9 +50,9 @@ export function ColombianCollection() {
           </div>
         ) : (
           <ColombianNFTs currency={currency}>
-            {images.map((image, index) => (
-              <ColombianNFT key={index} image={image} />
-            ))}
+              {images.map((image, index) => (
+                  <ColombianNFT key={index} image={image} />
+              ))}
           </ColombianNFTs>
         )}
       </div>
