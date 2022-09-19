@@ -12,7 +12,7 @@ import { ColombianProjects } from "../ColombianProjects";
 import { ColombianAbout } from "../ColombianAbout";
 import { ColombianMyProposals } from "../ColombianMyProposals";
 import { ColombianCollection } from "../ColombianCollection";
-import { ColombianError } from "../ColombianError";
+import { ColombianError } from "../../shared/ColombianError";
 
 function App() {
   const auth = useAuth();
