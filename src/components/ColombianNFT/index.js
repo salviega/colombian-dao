@@ -1,10 +1,15 @@
 import "./ColombianNFT.scss";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEthereum } from "@fortawesome/free-brands-svg-icons";
-import React from "react";
-import { Link } from "react-router-dom";
 
-export function ColombianNFT({ index, image, currency }) {
+export function ColombianNFT({ index, image, currency, setItem, setOpenModal }) {
+  
+  const onShowDetail = (item) => {
+    setItem(item)
+    setOpenModal(true)
+  }
+
   return (
     <div className="collection-card">
       <figure>
@@ -26,7 +31,7 @@ export function ColombianNFT({ index, image, currency }) {
           </p>
         </div>
         <div className="collection-card-description__buy">
-          <Link to="/">Buy now</Link>
+          <button onClick={() => onShowDetail(image)}>Buy now</button>
         </div>
       </div>
     </div>

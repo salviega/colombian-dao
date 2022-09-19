@@ -32,9 +32,10 @@
 
     &__title {
       font-size: 16px;
+      font-weight: bold;
       margin: 12px 0px;
       max-width: max-content;
-      
+
       p {
         max-width: max-content;
       }
@@ -44,7 +45,7 @@
       font-size: 12px;
       margin: 0px;
       max-width: max-content;
-      
+
       p {
         max-width: max-content;
       }
@@ -62,7 +63,7 @@
         font-size: 14px;
         margin: 12px 0px;
         max-width: max-content;
-        
+
         p {
           max-width: max-content;
         }
@@ -74,7 +75,7 @@
         margin: 12px 0px;
         padding-top: 3px;
         max-width: max-content;
-        
+
         p {
           max-width: max-content;
         }
@@ -91,19 +92,21 @@
       max-width: max-content;
       margin: 0;
       padding: 0;
-      
-      a {
+
+      button {
+        cursor: pointer;
         display: inline-block;
         text-decoration: none;
+        background: #fff;
         border: 2px solid #69a6ce;
         color: #69a6ce;
         padding: 10px 25px;
         border-radius: 25px;
-        transition: all 0.35s ease;
+        transition: all 0.27s ease;
 
         &:hover {
-          background: #69a6ce;
           color: #fff;
+          background-color: lighten(#69a6ce, 15%);
         }
       }
     }
