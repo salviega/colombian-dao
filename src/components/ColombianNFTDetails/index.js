@@ -38,7 +38,7 @@ export function ColombianNFTDetails({ item, currency, setOpenModal }) {
           <div className="collection-modal-description-container">
             <p className="collection-modal-description-container__attribute">
               Contract Address{" "}
-              <a href={`https://etherscan.io/address/${item.contract}`}>
+              <a href={`https://goerli.etherscan.io/address/${item.contract}`}>
                 {" "}
                 {item.contract.slice(0, 6) + "..." + item.contract.slice(36)}
               </a>
