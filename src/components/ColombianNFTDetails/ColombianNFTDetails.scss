@@ -12,6 +12,18 @@
   height: max-content;
   width: 695px;
 
+  &__cancel {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    font-size: 28px;
+    padding-top: 2px;
+    padding-right: 10px;
+    max-width: max-content;
+  }
+
   &__header {
     display: flex;
     justify-content: space-around;

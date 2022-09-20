@@ -12,7 +12,7 @@ export function ColombianNFT({ index, image, currency, setItem, setOpenModal }) 
 
   return (
     <div className="collection-card">
-      <figure>
+      <figure onClick={() => onShowDetail(image)}>
         <img src={image.url} alt="logo" />
       </figure>
       <div className="collection-card-description">
@@ -31,7 +31,7 @@ export function ColombianNFT({ index, image, currency, setItem, setOpenModal }) 
           </p>
         </div>
         <div className="collection-card-description__buy">
-          <button onClick={() => onShowDetail(image)}>Buy now</button>
+          <button>Buy now</button>
         </div>
       </div>
     </div>
