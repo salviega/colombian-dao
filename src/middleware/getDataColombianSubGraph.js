@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
 
 export function getDataColombianSubGraph () {
-  const url = 'https://api.studio.thegraph.com/query/32331/colombian-dao-market/v0.0.1'
+  const url = 'https://api.studio.thegraph.com/query/32331/colombian-dao-market-v2/v0.0.1'
 
   const client = new ApolloClient({
     uri: url,
@@ -13,27 +13,30 @@ export function getDataColombianSubGraph () {
       dataOfferds {
         id
         itemId
-        tokenId
-        price
         nft
+        tokenId
+        tokenURI
+        price
+        seller
       }
     }
   `
   const queryPurchasedItems = `
     query {
-      dataBoughts() {
+      dataBoughts {
         id
         itemId
-        tokenId
-        price
         nft
+        tokenId
+        tokenURI
+        price
         buyer
       }
     }
   `
   const getItemsForSale = async () => {
     const response = await client.query({ query: gql(queryItemsForSale) })
-    return response.data.dataOfferds
+    return response.data.dataOfferds[0]
   }
 
   const getPurchasedItems = async () => {

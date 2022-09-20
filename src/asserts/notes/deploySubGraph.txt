@@ -6,14 +6,14 @@ npx hardhat node
 npx hardhat run --network localhost src/blockchain/hardhat/scripts/deploy.js 
 
 npx hardhat run --network goerli src/blockchain/hardhat/scripts/deploy.js 
-npx hardhat verify --network goerli <AddressContract>
+npx hardhat verify --network goerli <AddressContract> "Constructor argument 1"
 -- go to the graph studio and create a subgraph project
 
 npm install -g @graphprotocol/graph-cli
 
 graph init --studio <SubGraphProjectName>
 graph auth --studio <DeployKey>
-cd src/blockchain/thegraph
+cd src/blockchain/subgraph/
 graph codegen && graph build
 graph deploy --studio <SubGraphProjectName>
 

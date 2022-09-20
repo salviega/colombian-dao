@@ -1,14 +1,1 @@
-[
-  {
-    "feedcontract": "0x6B1B02303B6d7a96f6C47660F9F351FE2bDeDeA2",
-    "blocknumber": 7617852
-  },
-  {
-    "Nftcontract": "0x5a1081FcaF5886845D5FE49fe0DE583EA15C4df3",
-    "blocknumber": 7605888
-  },
-  {
-    "colombianDaoMarketContract": "0x010445A1bec4BD8e35e8c08Fbf46c05B4CD00100",
-    "blocknumber": 7605888
-  }
-]
+[{"feedcontract":"0x53aced9e55105Ad35a6aac3662a7CE9522FeAF4D","blocknumber":7627255},{"colombianDaoMarketContract":"0x2431346f6A4D938bCdEc0A93599344751586D47a","blocknumber":7627255}]

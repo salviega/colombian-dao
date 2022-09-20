@@ -56,17 +56,20 @@
     /** @dev Offerd Emit when an NFT is for sale.
     * @param _itemId Item ID.
     * @param _nft NFT address.
-    * @param _tokenId NFT ID.
+    * @param _tokenId NFT ID.  
+    * @param _tokenURI NFT metadata.
     * @param _price NFT price.
+    * @param _seller Seller address.
     */
     event Offerd(uint _itemId, address indexed _nft,  uint _tokenId, string _tokenURI, uint _price, address indexed _seller);
 
     /** @dev Bought Emit when an NFT was purchased.
     * @param _itemId Item ID.
     * @param _nft NFT address.
+    * @param _tokenId NFT ID.  
+    * @param _tokenURI NFT metadata.
     * @param _price NFT price.
-    * @param _tokenId NFT ID.
-    * @param _buyer buyer address.
+    * @param _buyer Buyer address.
     */
     event Bought(uint _itemId, address indexed _nft,  uint _tokenId, string _tokenURI, uint _price, address indexed _buyer);
     
@@ -146,7 +149,7 @@
     // *   Getters & Setters  * //
     // ************************ //
 
-    function totalAsserts() view external returns(uint256) {
+    function totalAsserts() view public returns(uint256) {
         return address(this).balance;
     }
   }

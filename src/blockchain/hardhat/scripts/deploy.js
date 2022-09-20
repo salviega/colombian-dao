@@ -9,7 +9,7 @@ async function main () {
   console.log('Feed contract was deployein to block number: ' + await feedContract.provider.getBlockNumber())
     
   const ColombianDaoMarketContract = await ethers.getContractFactory('ColombianDaoMarketContract')
-  const colombianDaoMarketContract = await ColombianDaoMarketContract.deploy()
+  const colombianDaoMarketContract = await ColombianDaoMarketContract.deploy("Colombian Dao Market", "CDM")
   await colombianDaoMarketContract.deployed()
   console.log('Colombian Dao market contract was deployed to: ' + colombianDaoMarketContract.address)
   console.log('Colombian Dao market contract was deployein to block number: ' + await colombianDaoMarketContract.provider.getBlockNumber())

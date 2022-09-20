@@ -7,13 +7,15 @@ const AuthContext = React.createContext();
 
 export function AuthProvider({ children }) {
   const navigate = useNavigate();
-  const [user, setUser] = React.useState({
-    walletAddress: localStorage.getItem('wallet') || 'Connect your wallet',
-  });
+
+  const initialState = JSON.parse(localStorage.getItem('wallet')) || 'Connect your wallet'
+  const [user, setUser] = React.useState({ ...initialState || initialState });
 
   const login = ({ walletAddress }) => {
-    localStorage.setItem('wallet', walletAddress)
-    const isAdmin = walletAdmin === walletAddress;
+    let isAdmin = false
+    if(walletAdmin === walletAddress) isAdmin = true
+    const stringifiedUser = JSON.stringify({ walletAddress, isAdmin })
+    localStorage.setItem('wallet', stringifiedUser)
     setUser({ walletAddress, isAdmin });
   };
 
