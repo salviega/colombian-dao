@@ -3,7 +3,6 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEthereum } from "@fortawesome/free-brands-svg-icons";
 import { faWallet, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 
 export function ColombianNFTDetails({ item, currency, setOpenModal }) {
   const closeModal = (event) => {
@@ -30,19 +29,19 @@ export function ColombianNFTDetails({ item, currency, setOpenModal }) {
               className="collection-modal-description-sale__attribute"
             />
             <p className="collection-card-description-sale__attribute">
-              {item.price}
+            {((parseInt(item.price) / currency) +  + 0.001).toFixed(3)}
             </p>
             <p className="collection-modal-description-sale__currency">
-              ${(currency * item.price).toFixed(2)}
+              ${parseInt(item.price).toFixed(2)}
             </p>
           </div>
           <div className="collection-modal-description-container">
             <p className="collection-modal-description-container__attribute">
               Contract Address{" "}
-              <Link to={`https://etherscan.io/address/${item.contract}`}>
+              <a href={`https://etherscan.io/address/${item.contract}`}>
                 {" "}
                 {item.contract.slice(0, 6) + "..." + item.contract.slice(36)}
-              </Link>
+              </a>
             </p>
             <p className="collection-modal-description-container__attribute">
               Token ID <p>{item.tokenId}</p>
@@ -51,7 +50,7 @@ export function ColombianNFTDetails({ item, currency, setOpenModal }) {
               Token Standard <p>{item.tokenStandard}</p>
             </p>
             <p className="collection-modal-description-container__attribute">
-              Blockchain <p>{item.Blockchain}</p>
+              Blockchain <p>{item.blockchain}</p>
             </p>
           </div>
         </div>

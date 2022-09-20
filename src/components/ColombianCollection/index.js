@@ -23,7 +23,7 @@ export function ColombianCollection() {
   const [purchasedItems, setPurchasedItems] = React.useState([]);
   const [item, setItem] = React.useState([]);
   const [currency, setCurrency] = React.useState(0);
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
   
   
   const [openModal, setOpenModal] = React.useState(false)
@@ -37,13 +37,33 @@ export function ColombianCollection() {
       feedContractAbi.abi,
       provider
     );
-    const currency = await feedContract.getLatestPrice();
-    setCurrency(ethers.BigNumber.from(currency).toNumber());
-    console.log(await getItemsForSale())
-    setItemsForSale(await getItemsForSale());
-    setPurchasedItems(await getPurchasedItems());
-    setLoading(false);
+    const currency = await feedContract.getLatestPrice()
+    setCurrency(ethers.BigNumber.from(currency).toNumber())
+    setPurchasedItems(await getPurchasedItems())
+    
+    await refactorItems(await getItemsForSale(), setItemsForSale)
+    setLoading(false)
   };
+
+  const refactorItems = async (items, state) =>{
+    const result = items.map(async (item) => {
+      const response = await fetch(item.tokenURI)
+      const metadata = await response.json()
+      const refactoredItem = {
+        title: metadata.title,
+        description: metadata.description,
+        price: item.price,
+        url: metadata.url,
+        contract: item.nft,
+        tokenId: item.tokenId,
+        tokenStandard: metadata.tokenStandard,
+        blockchain: metadata.Blockchain
+      }
+      return refactoredItem
+    })
+    const refactoredItems = await Promise.all(result)
+    state(refactoredItems)
+  }
 
   React.useEffect(() => {
     fetchData();
@@ -62,8 +82,8 @@ export function ColombianCollection() {
           </div>
         ) : (
           <ColombianNFTs currency={currency} setItem={setItem} setOpenModal={setOpenModal}>
-              {images.map((image, index) => (
-                  <ColombianNFT key={index} image={image} />
+              {itemsForSale.map((item, index) => (
+                  <ColombianNFT key={index} item={item} />
               ))}
           </ColombianNFTs>
         )}
@@ -76,77 +96,3 @@ export function ColombianCollection() {
     </React.Fragment>
   );
 }
-
-const images = [
-  {
-    title: "Cien años de soledad",
-    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos culpa eaque soluta dicta error et possimus neque velit eius eum illum hic similique molestias perferendis, temporibus reiciendis. Dolor, nemo quidem! Lorem ipsum dolor sit amet consectetur, adipisicing elit Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos culpa eaque soluta dicta error et possimus neque velit eius eum illum hic similique molestias perferendis, temporibus reiciendis. Dolor, nemo quidem! Lorem ipsum dolor sit amet consectetur, adipisicing elit",
-    price: "20",
-    url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi2.wp.com%2Fnypost.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2014%2F04%2Fgabriel-garcia-marquez.jpg%3Fquality%3D90%26strip%3Dall%26ssl%3D1&f=1&nofb=1",
-    contract: "0x86fc6f6c6702ceF7d3BaE87eF41256715416DB71",
-    tokenId: "9597",
-    tokenStandard: "ERC-721",
-    Blockchain: "Ethereum",
-  },
-  {
-    title: "Cien años de soledad",
-    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos culpa eaque soluta dicta error et possimus neque velit eius eum illum hic similique molestias perferendis, temporibus reiciendis. Dolor, nemo quidem!",
-    price: "20",
-    url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi2.wp.com%2Fnypost.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2014%2F04%2Fgabriel-garcia-marquez.jpg%3Fquality%3D90%26strip%3Dall%26ssl%3D1&f=1&nofb=1",
-    contract: "0x86fc6f6c6702ceF7d3BaE87eF41256715416DB71",
-    tokenId: "9597",
-    tokenStandard: "ERC-721",
-    Blockchain: "Ethereum",
-  },
-  {
-    title: "Cien años de soledad",
-    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos culpa eaque soluta dicta error et possimus neque velit eius eum illum hic similique molestias perferendis, temporibus reiciendis. Dolor, nemo quidem!",
-    price: "20",
-    url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi2.wp.com%2Fnypost.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2014%2F04%2Fgabriel-garcia-marquez.jpg%3Fquality%3D90%26strip%3Dall%26ssl%3D1&f=1&nofb=1",
-    contract: "0x86fc6f6c6702ceF7d3BaE87eF41256715416DB71",
-    tokenId: "9597",
-    tokenStandard: "ERC-721",
-    Blockchain: "Ethereum",
-  },
-  {
-    title: "Cien años de soledad",
-    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos culpa eaque soluta dicta error et possimus neque velit eius eum illum hic similique molestias perferendis, temporibus reiciendis. Dolor, nemo quidem!",
-    price: "20",
-    url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi2.wp.com%2Fnypost.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2014%2F04%2Fgabriel-garcia-marquez.jpg%3Fquality%3D90%26strip%3Dall%26ssl%3D1&f=1&nofb=1",
-    contract: "0x86fc6f6c6702ceF7d3BaE87eF41256715416DB71",
-    tokenId: "9597",
-    tokenStandard: "ERC-721",
-    Blockchain: "Ethereum",
-  },
-  {
-    title: "Cien años de soledad",
-    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos culpa eaque soluta dicta error et possimus neque velit eius eum illum hic similique molestias perferendis, temporibus reiciendis. Dolor, nemo quidem!",
-    price: "20",
-    url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi2.wp.com%2Fnypost.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2014%2F04%2Fgabriel-garcia-marquez.jpg%3Fquality%3D90%26strip%3Dall%26ssl%3D1&f=1&nofb=1",
-    contract: "0x86fc6f6c6702ceF7d3BaE87eF41256715416DB71",
-    tokenId: "9597",
-    tokenStandard: "ERC-721",
-    Blockchain: "Ethereum",
-  },
-  {
-    title: "Cien años de soledad",
-    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos culpa eaque soluta dicta error et possimus neque velit eius eum illum hic similique molestias perferendis, temporibus reiciendis. Dolor, nemo quidem!",
-    price: "20",
-    url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi2.wp.com%2Fnypost.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2014%2F04%2Fgabriel-garcia-marquez.jpg%3Fquality%3D90%26strip%3Dall%26ssl%3D1&f=1&nofb=1",
-    contract: "0x86fc6f6c6702ceF7d3BaE87eF41256715416DB71",
-    tokenId: "9597",
-    tokenStandard: "ERC-721",
-    Blockchain: "Ethereum",
-  },
-  {
-    title: "Cien años de soledad",
-    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos culpa eaque soluta dicta error et possimus neque velit eius eum illum hic similique molestias perferendis, temporibus reiciendis. Dolor, nemo quidem!",
-    price: "20",
-    url: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi2.wp.com%2Fnypost.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2014%2F04%2Fgabriel-garcia-marquez.jpg%3Fquality%3D90%26strip%3Dall%26ssl%3D1&f=1&nofb=1",
-    contract: "0x86fc6f6c6702ceF7d3BaE87eF41256715416DB71",
-    tokenId: "9597",
-    tokenStandard: "ERC-721",
-    Blockchain: "Ethereum",
-  },
-  
-];
