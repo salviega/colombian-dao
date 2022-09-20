@@ -4,6 +4,7 @@
   
   import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
   import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
+  import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
   import "@openzeppelin/contracts/utils/Counters.sol";
   
   /**
@@ -13,25 +14,33 @@
   *  
   */
 
-  contract ColombianDaoMarketContract is ReentrancyGuard {
+  contract ColombianDaoMarketContract is ERC721URIStorage, ReentrancyGuard {
     using Counters for Counters.Counter;
 
     Counters.Counter public ItemCounter;
-   
+    Counters.Counter public tokenIdCounter;
+    
+    /* Constants and immutable */
     address payable public immutable account;
   
     /* Storege */
+    struct Token {
+      uint id;
+      string URI;
+    }
 
     struct Item {
       uint itemId;
       IERC721 nft;
       uint tokenId;
+      string tokenURI;
       uint price;
-      address payable seller;
       bool sold;
+      address payable seller;
     }
 
     mapping(uint => Item) public items;
+    mapping(uint => Token) public tokens; 
 
     /* Modifiers */
 
@@ -50,7 +59,7 @@
     * @param _tokenId NFT ID.
     * @param _price NFT price.
     */
-    event Offerd(uint _itemId, address indexed _nft, uint _price, uint _tokenId);
+    event Offerd(uint _itemId, address indexed _nft,  uint _tokenId, string _tokenURI, uint _price, address indexed _seller);
 
     /** @dev Bought Emit when an NFT was purchased.
     * @param _itemId Item ID.
@@ -59,13 +68,15 @@
     * @param _tokenId NFT ID.
     * @param _buyer buyer address.
     */
-    event Bought(uint _itemId, address indexed _nft, uint _price, uint _tokenId, address indexed _buyer);
+    event Bought(uint _itemId, address indexed _nft,  uint _tokenId, string _tokenURI, uint _price, address indexed _buyer);
     
     /** @dev Constructor
+    * @param _name token name.
+    * @param _symbol acronym token name .
     */
-    constructor() {
+    constructor(string memory _name, string memory _symbol) ERC721(_name, _symbol) {
       account = payable(msg.sender);
-    } 
+    }
 
     // ************************ //
     // *      Functions       * //
@@ -83,10 +94,12 @@
       uint256 itemId = ItemCounter.current();
 
       _nft.transferFrom(msg.sender, address(this), _tokenId);
-
-      items[itemId] = Item(itemId, _nft, _tokenId,  _price, payable(msg.sender), false);
       
-      emit Offerd(itemId, address(_nft), _price,  _tokenId);
+      Token memory token = tokens[_tokenId]; 
+      Item memory newItem = Item(itemId, _nft, _tokenId, token.URI, _price, false, payable(msg.sender));
+      items[itemId] = newItem; 
+      
+      emit Offerd(itemId, address(_nft), _tokenId, token.URI, _price, payable(msg.sender));
     }
 
     /** @dev Generate NFT purchase.
@@ -102,8 +115,38 @@
       
       payable(account).transfer(price);  
       item.nft.transferFrom(address(this), msg.sender, item.tokenId);
-      items[_itemId].sold = true;
       
-      emit Bought(item.itemId, address(item.nft), item.price, item.tokenId, payable(msg.sender));
+      Item storage purchasedItem = items[_itemId];
+      purchasedItem.sold = true;
+      Token memory purchasedToken = tokens[purchasedItem.tokenId];
+      
+      emit Bought(item.itemId, address(item.nft), item.tokenId, purchasedToken.URI, item.price, payable(msg.sender));
+    }
+
+    /** @dev Generate NFT mint.
+    * @param _tokenURI NFT metadata.
+    */
+    
+    function mint(string memory _tokenURI) public onlyOwner returns (uint) {
+      uint256 tokenId = tokenIdCounter.current();
+      tokenIdCounter.increment();
+
+      _safeMint(msg.sender, tokenId);
+      _setTokenURI(tokenId, _tokenURI);
+      tokens[tokenId] = Token(tokenId, _tokenURI);
+      
+      return tokenId;
+    }
+
+    function withdraw() payable external onlyOwner nonReentrant {
+     payable(account).transfer(address(this).balance);   
+    }
+
+    // ************************ //
+    // *   Getters & Setters  * //
+    // ************************ //
+
+    function totalAsserts() view external returns(uint256) {
+        return address(this).balance;
     }
   }

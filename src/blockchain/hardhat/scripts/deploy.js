@@ -7,13 +7,7 @@ async function main () {
   await feedContract.deployed()
   console.log('Feed contract was deployed to: ' + feedContract.address)
   console.log('Feed contract was deployein to block number: ' + await feedContract.provider.getBlockNumber())
-  
-  const NFTContract = await ethers.getContractFactory('NFTContract')
-  const nftContract = await NFTContract.deploy("Colombian Dao Market", "CDM")
-  await nftContract.deployed()
-  console.log('NFT contract was deployed to: ' + nftContract.address)
-  console.log('NFT contract was deployein to block number: ' + await nftContract.provider.getBlockNumber())
-  
+    
   const ColombianDaoMarketContract = await ethers.getContractFactory('ColombianDaoMarketContract')
   const colombianDaoMarketContract = await ColombianDaoMarketContract.deploy()
   await colombianDaoMarketContract.deployed()
@@ -23,10 +17,6 @@ async function main () {
   const addresses = [
     { feedcontract: feedContract.address,
       blocknumber: await feedContract.provider.getBlockNumber()
-    },
-    {
-      Nftcontract: nftContract.address,
-      blocknumber: await nftContract.provider.getBlockNumber()
     },
     {
       colombianDaoMarketContract: colombianDaoMarketContract.address,
