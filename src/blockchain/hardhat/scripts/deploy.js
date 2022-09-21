@@ -19,7 +19,7 @@ async function main () {
       blocknumber: await feedContract.provider.getBlockNumber()
     },
     {
-      colombianDaoMarketContract: colombianDaoMarketContract.address,
+      colombiandaomarketcontract: colombianDaoMarketContract.address,
       blocknumber: await colombianDaoMarketContract.provider.getBlockNumber()
     }
   ]

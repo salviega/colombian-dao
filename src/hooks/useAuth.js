@@ -15,7 +15,6 @@ export function AuthProvider({ children }) {
     let isAdmin = false
     if(walletAdmin === walletAddress) isAdmin = true
     const stringifiedUser = JSON.stringify({ walletAddress, isAdmin })
-    console.log(stringifiedUser)
     localStorage.setItem('wallet', stringifiedUser)
     setUser({ walletAddress, isAdmin });
   };

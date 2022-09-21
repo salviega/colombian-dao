@@ -6,14 +6,14 @@ import { Outlet } from 'react-router-dom';
 import { ethers } from "ethers";
 import { ColombianLoading } from "../../shared/ColombianLoading";
 import { ColombianBanner } from "../../shared/ColombianBanner";
-import { getDataColombianSubGraph } from "../../middleware/getDataColombianSubGraph";
-import feedContractAbi from "../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/FeedContract.sol/FeedContract.json";
-import addresses from "../../blockchain/environment/contract-address.json";
 import { ColombianNFTs } from "../ColombianNFTs";
 import { ColombianNFT } from "../ColombianNFT";
 import { ColombianModal } from '../../shared/ColombianModal';
 import { ColombianNFTDetails } from '../ColombianNFTDetails';
 import { useAuth } from '../../hooks/useAuth';
+import { getDataColombianSubGraph } from "../../middleware/getDataColombianSubGraph";
+import feedContractAbi from "../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/FeedContract.sol/FeedContract.json";
+import addresses from "../../blockchain/environment/contract-address.json";
 const feedContractAddress = addresses[0].feedcontract;
 
 export function ColombianCollection() {
@@ -24,8 +24,7 @@ export function ColombianCollection() {
   const [item, setItem] = React.useState([]);
   const [currency, setCurrency] = React.useState(0);
   const [loading, setLoading] = React.useState(true);
-  
-  
+  const [sincronizedItems, setSincronizedItems] = React.useState(true)
   const [openModal, setOpenModal] = React.useState(false)
 
   const fetchData = async () => {
@@ -37,19 +36,27 @@ export function ColombianCollection() {
       feedContractAbi.abi,
       provider
     );
+
     const currency = await feedContract.getLatestPrice()
     setCurrency(ethers.BigNumber.from(currency).toNumber())
-    setPurchasedItems(await getPurchasedItems())
     
-    await refactorItems(await getItemsForSale(), setItemsForSale)
+    const filteredSaleForItems = filterSaleForItems(await getItemsForSale(), await getPurchasedItems())
+    await refactorItems(filteredSaleForItems, setItemsForSale)
     setLoading(false)
+    setSincronizedItems(true)
   };
+
+  const filterSaleForItems = async (itemsForSale, purchasedItems) => {
+  const filteredItems = removeDuplicates([...itemsForSale, ...purchasedItems])
+  console.log(filteredItems);
+  }
 
   const refactorItems = async (items, state) =>{
     const result = items.map(async (item) => {
       const response = await fetch(item.tokenURI)
       const metadata = await response.json()
       const refactoredItem = {
+        itemId: item.itemId,
         title: metadata.title,
         description: metadata.description,
         price: item.price,
@@ -67,7 +74,8 @@ export function ColombianCollection() {
 
   React.useEffect(() => {
     fetchData();
-  }, []);
+    console.log(':D')
+  }, [sincronizedItems]);
 
   return (
     <React.Fragment>
@@ -81,7 +89,7 @@ export function ColombianCollection() {
             <ColombianLoading />
           </div>
         ) : (
-          <ColombianNFTs currency={currency} setItem={setItem} setOpenModal={setOpenModal}>
+          <ColombianNFTs currency={currency} setItem={setItem} setLoading={setLoading} setSincronizedItems={setSincronizedItems} setOpenModal={setOpenModal}>
               {itemsForSale.map((item, index) => (
                   <ColombianNFT key={index} item={item} />
               ))}
@@ -95,4 +103,8 @@ export function ColombianCollection() {
       )}
     </React.Fragment>
   );
+}
+
+function removeDuplicates(itemsList) {
+  return [...new Set(itemsList)];
 }

@@ -41,7 +41,7 @@ export function getDataColombianSubGraph () {
 
   const getPurchasedItems = async () => {
     const response = await client.query({ query: gql(queryPurchasedItems) })
-    return response.data.contributorQuotes
+    return response.data.dataBoughts
   }
 
   return {
