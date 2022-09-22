@@ -13,7 +13,6 @@ import { ColombianAbout } from "../ColombianAbout";
 import { ColombianMyProposals } from "../ColombianMyProposals";
 import { ColombianCollection } from "../ColombianCollection";
 import { ColombianError } from "../ColombianError";
-import { ColombianSaleNFTs } from '../ColombianSaleNFTs';
 
 function App() {
   const auth = useAuth();
@@ -49,9 +48,7 @@ function App() {
           <Routes>
             <Route path="/" element={<ColombianHome />} />
             <Route path="/about" element={<ColombianAbout />} />
-            <Route path="/collection" element={<ColombianCollection />}>
-              <Route path="/collection" element={<ColombianSaleNFTs />} />
-            </Route>
+            <Route path="/collection" element={<ColombianCollection />} />
             <Route path="/projects" element={<ColombianProjects />} />
             <Route path="/proposals" element={<ColombianMyProposals />} />
             <Route path="/form" element={<ColombianApply />} />

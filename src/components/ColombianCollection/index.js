@@ -2,7 +2,6 @@ import "./ColombianCollection.scss";
 import collection from "../../asserts/json/collection.json";
 import banner from "../../asserts/images/collection-banner-horizontal.jpg";
 import React from "react";
-import { Outlet } from 'react-router-dom';
 import { ethers } from "ethers";
 import { ColombianLoading } from "../../shared/ColombianLoading";
 import { ColombianBanner } from "../../shared/ColombianBanner";
@@ -10,6 +9,7 @@ import { ColombianNFTs } from "../ColombianNFTs";
 import { ColombianNFT } from "../ColombianNFT";
 import { ColombianModal } from '../../shared/ColombianModal';
 import { ColombianNFTDetails } from '../ColombianNFTDetails';
+import { ColombianSupplyNFTs } from '../ColombianSupplyNFTs';
 import { useAuth } from '../../hooks/useAuth';
 import { getDataColombianSubGraph } from "../../middleware/getDataColombianSubGraph";
 import feedContractAbi from "../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/FeedContract.sol/FeedContract.json";
@@ -44,6 +44,7 @@ export function ColombianCollection() {
     await refactorItems(filteredSaleForItems, setItemsForSale)
     setLoading(false)
     setSincronizedItems(true)
+    console.log('Fetch sincronized')
   };
 
   const refactorItems = async (items, state) =>{
@@ -69,7 +70,6 @@ export function ColombianCollection() {
 
   React.useEffect(() => {
     fetchData();
-    console.log(':D')
   }, [sincronizedItems]);
 
   return (
@@ -78,16 +78,16 @@ export function ColombianCollection() {
         <ColombianBanner banner={banner} />
         <h1 className="collection__title">{collection.title}</h1>
         <p className="collection__description">{collection.description}</p>
-        {auth.user.isAdmin && <Outlet />}
+        {auth.user.isAdmin && <ColombianSupplyNFTs loading={loading} setLoading={setLoading} setSincronizedItems={setSincronizedItems}/>}
         {loading ? (
           <div className="collection-container__loading">
             <ColombianLoading />
           </div>
         ) : (
           <ColombianNFTs currency={currency} setItem={setItem} setLoading={setLoading} setSincronizedItems={setSincronizedItems} setOpenModal={setOpenModal}>
-              {itemsForSale.map((item, index) => (
+              {itemsForSale ? itemsForSale.map((item, index) => (
                   <ColombianNFT key={index} item={item} />
-              ))}
+              )) : "There don't NFTs in sale"}
           </ColombianNFTs>
         )}
       </div>
