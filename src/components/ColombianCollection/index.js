@@ -40,16 +40,11 @@ export function ColombianCollection() {
     const currency = await feedContract.getLatestPrice()
     setCurrency(ethers.BigNumber.from(currency).toNumber())
     
-    const filteredSaleForItems = filterSaleForItems(await getItemsForSale(), await getPurchasedItems())
+    const filteredSaleForItems = await filterSaleForItems(await getItemsForSale(), await getPurchasedItems())
     await refactorItems(filteredSaleForItems, setItemsForSale)
     setLoading(false)
     setSincronizedItems(true)
   };
-
-  const filterSaleForItems = async (itemsForSale, purchasedItems) => {
-  const filteredItems = removeDuplicates([...itemsForSale, ...purchasedItems])
-  console.log(filteredItems);
-  }
 
   const refactorItems = async (items, state) =>{
     const result = items.map(async (item) => {
@@ -105,6 +100,28 @@ export function ColombianCollection() {
   );
 }
 
-function removeDuplicates(itemsList) {
-  return [...new Set(itemsList)];
+async function filterSaleForItems(itemsForSale, purchasedItems) {   
+  let boughtItems = []
+  itemsForSale.forEach(itemForSale => {
+    purchasedItems.forEach(purchasedItem => {
+      if (itemForSale.itemId === purchasedItem.itemId) {
+        boughtItems.push(itemForSale)
+      }
+    });
+  });
+
+  const filteredItems = await removeDuplicates([...itemsForSale, ...boughtItems])
+  return filteredItems
+}
+
+async function removeDuplicates(itemListWithDuplicates) {
+    const itemListWithoutDuplicates = itemListWithDuplicates.filter((item,index) => {
+      itemListWithDuplicates.splice(index,1)
+      const unique = !itemListWithDuplicates.includes(item)
+      itemListWithDuplicates.splice(index,0,item)
+      return unique
+    })
+
+  const saleForItems = await Promise.all(itemListWithoutDuplicates)
+  return saleForItems
 }
