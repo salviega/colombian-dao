@@ -1,1 +1,10 @@
-[{"feedcontract":"0x53aced9e55105Ad35a6aac3662a7CE9522FeAF4D","blocknumber":7627255},{"colombiandaomarketcontract":"0x2431346f6A4D938bCdEc0A93599344751586D47a","blocknumber":7627255}]
+[
+  {
+    "feedcontract": "0x53aced9e55105Ad35a6aac3662a7CE9522FeAF4D",
+    "blocknumber": 7627255
+  },
+  {
+    "colombiandaomarketcontract": "0x2431346f6A4D938bCdEc0A93599344751586D47a",
+    "blocknumber": 7627255
+  }
+]

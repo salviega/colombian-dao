@@ -13,8 +13,11 @@ import { ColombianSupplyNFTs } from '../ColombianSupplyNFTs';
 import { useAuth } from '../../hooks/useAuth';
 import { getDataColombianSubGraph } from "../../middleware/getDataColombianSubGraph";
 import feedContractAbi from "../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/FeedContract.sol/FeedContract.json";
+import colombianDaoMarketContractAbi from "../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/ColombianDaoMarketContract.sol/ColombianDaoMarketContract.json";
 import addresses from "../../blockchain/environment/contract-address.json";
 const feedContractAddress = addresses[0].feedcontract;
+const colombianDaoMarketContractAddress =
+  addresses[1].colombiandaomarketcontract;
 
 export function ColombianCollection() {
   const auth = useAuth()
@@ -23,12 +26,13 @@ export function ColombianCollection() {
   const [purchasedItems, setPurchasedItems] = React.useState([]);
   const [item, setItem] = React.useState([]);
   const [currency, setCurrency] = React.useState(0);
+  const [tokenIdCounter, setTokenIdCounter] = React.useState()
   const [loading, setLoading] = React.useState(true);
   const [sincronizedItems, setSincronizedItems] = React.useState(true)
   const [openModal, setOpenModal] = React.useState(false)
 
   const fetchData = async () => {
-    const provider = new ethers.providers.JsonRpcProvider(
+    let provider = new ethers.providers.JsonRpcProvider(
       "https://rpc.ankr.com/eth_goerli"
     );
     const feedContract = new ethers.Contract(
@@ -37,14 +41,23 @@ export function ColombianCollection() {
       provider
     );
 
+    provider = new ethers.providers.Web3Provider(window.ethereum);
+    const colombianDaoMarketContract = new ethers.Contract(
+      colombianDaoMarketContractAddress,
+      colombianDaoMarketContractAbi.abi,
+      provider
+    );
+
     const currency = await feedContract.getLatestPrice()
+    const tokenIdCounter = await colombianDaoMarketContract.tokenIdCounter()
+    setTokenIdCounter(ethers.BigNumber.from(tokenIdCounter).toNumber())
     setCurrency(ethers.BigNumber.from(currency).toNumber())
     
     const filteredSaleForItems = await filterSaleForItems(await getItemsForSale(), await getPurchasedItems())
     await refactorItems(filteredSaleForItems, setItemsForSale)
-    setLoading(false)
     setSincronizedItems(true)
     console.log('Fetch sincronized')
+    setLoading(false)
   };
 
   const refactorItems = async (items, state) =>{
@@ -78,7 +91,7 @@ export function ColombianCollection() {
         <ColombianBanner banner={banner} />
         <h1 className="collection__title">{collection.title}</h1>
         <p className="collection__description">{collection.description}</p>
-        {auth.user.isAdmin && <ColombianSupplyNFTs loading={loading} setLoading={setLoading} setSincronizedItems={setSincronizedItems}/>}
+        {!loading && auth.user.isAdmin && <ColombianSupplyNFTs tokenIdCounter={tokenIdCounter} setLoading={setLoading} setSincronizedItems={setSincronizedItems}/>}
         {loading ? (
           <div className="collection-container__loading">
             <ColombianLoading />
@@ -93,7 +106,7 @@ export function ColombianCollection() {
       </div>
       {openModal && (
         <ColombianModal>
-          <ColombianNFTDetails item={item} currency={currency} setOpenModal={setOpenModal} />
+          <ColombianNFTDetails item={item} currency={currency} setLoading={setLoading} setSincronizedItems={setSincronizedItems} setOpenModal={setOpenModal} />
         </ColombianModal>
       )}
     </React.Fragment>
