@@ -26,7 +26,7 @@ export function ColombianCollection() {
   const [purchasedItems, setPurchasedItems] = React.useState([]);
   const [item, setItem] = React.useState([]);
   const [currency, setCurrency] = React.useState(0);
-  const [tokenIdCounter, setTokenIdCounter] = React.useState()
+  const [tokenIdCounter, setTokenIdCounter] = React.useState(null)
   const [loading, setLoading] = React.useState(true);
   const [sincronizedItems, setSincronizedItems] = React.useState(true)
   const [openModal, setOpenModal] = React.useState(false)
