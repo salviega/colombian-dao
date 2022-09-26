@@ -80,6 +80,7 @@ export function ColombianSupplyNFTs({ tokenIdCounter, setLoading, setSincronized
             <p>Add the price in USD: </p>
             <input
               type="number"
+              required
               min="1"
               step="0.01"
               placeholder="10"
@@ -90,6 +91,7 @@ export function ColombianSupplyNFTs({ tokenIdCounter, setLoading, setSincronized
             <p>Add the token ID: </p>
             <input
               type="number"
+              required
               min="0"
               step="0"
               placeholder="1"
@@ -100,6 +102,7 @@ export function ColombianSupplyNFTs({ tokenIdCounter, setLoading, setSincronized
             <p>Add the metadata of the new NFT: </p>
             <input
               type="url"
+              required
               placeholder="https://gateway/ipfs/example-metadata.json"
               ref={tokenURI}
             />

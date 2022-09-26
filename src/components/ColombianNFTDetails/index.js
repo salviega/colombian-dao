@@ -32,6 +32,7 @@ export function ColombianNFTDetails({
         value: weiPrice.toString(),
         gasLimit: 250000,
       });
+      setOpenModal(false);
       setLoading(true);
 
       web3Provider.waitForTransaction(response.hash).then((_response) => {

@@ -20,19 +20,22 @@ const colombianDaoMarketContractAddress =
   addresses[1].colombiandaomarketcontract;
 
 export function ColombianCollection() {
-  const auth = useAuth()
   const { getItemsForSale, getPurchasedItems } = getDataColombianSubGraph();
+  const auth = useAuth()
+  
   const [itemsForSale, setItemsForSale] = React.useState([]);
   const [purchasedItems, setPurchasedItems] = React.useState([]);
   const [item, setItem] = React.useState([]);
   const [currency, setCurrency] = React.useState(0);
   const [tokenIdCounter, setTokenIdCounter] = React.useState(null)
   const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(false);
   const [sincronizedItems, setSincronizedItems] = React.useState(true)
   const [openModal, setOpenModal] = React.useState(false)
 
   const fetchData = async () => {
-    let provider = new ethers.providers.JsonRpcProvider(
+    try {
+      let provider = new ethers.providers.JsonRpcProvider(
       "https://rpc.ankr.com/eth_goerli"
     );
     const feedContract = new ethers.Contract(
@@ -55,9 +58,13 @@ export function ColombianCollection() {
     
     const filteredSaleForItems = await filterSaleForItems(await getItemsForSale(), await getPurchasedItems())
     await refactorItems(filteredSaleForItems, setItemsForSale)
+    setPurchasedItems(await getPurchasedItems())
     setSincronizedItems(true)
     console.log('Fetch sincronized')
     setLoading(false)
+    } catch(error) {
+      setError(error)
+    }
   };
 
   const refactorItems = async (items, state) =>{

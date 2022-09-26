@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate, Navigate } from "react-router-dom";
 
-const walletAdmin = "0x70a792ad975aa0977c6e9d55a14f5f2228bbc685";
+const adminWallets = ["0x70a792ad975aa0977c6e9d55a14f5f2228bbc685", "0xAb22c966dDb38839A12314D1311158a23Fe0B39b"];
 
 const AuthContext = React.createContext();
 
@@ -13,7 +13,8 @@ export function AuthProvider({ children }) {
 
   const login = ({ walletAddress }) => {
     let isAdmin = false
-    if(walletAdmin === walletAddress) isAdmin = true
+    const adminWallet = adminWallets.find(wallet => wallet === walletAddress)
+    if(adminWallet === walletAddress) isAdmin = true
     const stringifiedUser = JSON.stringify({ walletAddress, isAdmin })
     localStorage.setItem('wallet', stringifiedUser)
     setUser({ walletAddress, isAdmin });
