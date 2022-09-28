@@ -105,7 +105,7 @@ export function ColombianCollection() {
         {!loading && auth.user.isAdmin && 
           <div className="collection-admin">
             <ColombianSupplyNFTs tokenIdCounter={tokenIdCounter} setLoading={setLoading} setSincronizedItems={setSincronizedItems}/>
-            <ColombianNFTsResume auth={auth} currency={currency} itemsForSale={itemsForSale} purchasedItems={purchasedItems}/>
+            <ColombianNFTsResume currency={currency} itemsForSale={itemsForSale} purchasedItems={purchasedItems}/>
           </div>
         }
         {loading ? (

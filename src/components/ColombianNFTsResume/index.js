@@ -3,8 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./ColombianNFTsResume.scss";
 
-export function ColombianNFTsResume({ auth, currency, purchasedItems }) {
-  console.log(purchasedItems)
+export function ColombianNFTsResume({ currency, purchasedItems }) {
   const owner = "0x70A792ad975Aa0977c6E9d55a14f5F2228bBC685";
   const totalItems = purchasedItems.length;
 
