@@ -1,0 +1,40 @@
+.collection-stats {
+  margin: 40px 16px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 202px;
+  width: 516px;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &__table {
+    width: 516px;
+    border-collapse: collapse;
+
+    th, td {
+      text-align: center;
+      border:1px solid black;
+      width: 258px;
+    }
+  }
+  &-total {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+
+    &__attribute {
+      font-size: 14px;
+      margin: 0px;
+      max-width: min-content;
+
+
+    }
+    p {
+      max-width: min-content;
+    }
+  }
+}

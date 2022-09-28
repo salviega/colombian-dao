@@ -57,7 +57,7 @@ describe("Colombian Dao Market", () => {
         await colombianDeployed.approve(colombianDeployed.address, 0),
         "This approve was successful"
       );
-      // await expect(await nftDeployed.connect(addr1).approve(colombianDeployed.address, 0)).to.be.revertedWith('ERC721: approve caller is not token owner nor approved for all')
+      // await expect(await colombianDeployed.connect(addr1).approve(colombianDeployed.address, 0)).to.be.revertedWith('ERC721: approve caller is not token owner nor approved for all')
     });
 
     // it('Verify onlyOwner modifier', async () => {
@@ -95,7 +95,7 @@ describe("Colombian Dao Market", () => {
       await colombianDeployed.approve(colombianDeployed.address, 0);
       await colombianDeployed.sellItem(colombianDeployed.address, 0, 5);
 
-      const item = await colombianDeployed.items(0);
+      //const item = await colombianDeployed.items(0);
 
       assert(
         await colombianDeployed.buyItem(1, {

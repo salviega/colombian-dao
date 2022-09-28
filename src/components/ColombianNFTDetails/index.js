@@ -67,7 +67,7 @@ export function ColombianNFTDetails({
               className="collection-modal-description-sale__attribute"
             />
             <p className="collection-card-description-sale__attribute">
-              {(parseInt(item.price) / currency + +0.001).toFixed(3)}
+              {(parseInt(item.price) / currency + 0.001).toFixed(3)}
             </p>
             <p className="collection-modal-description-sale__currency">
               ${parseInt(item.price).toFixed(2)}

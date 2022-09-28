@@ -15,6 +15,7 @@ import { getDataColombianSubGraph } from "../../middleware/getDataColombianSubGr
 import feedContractAbi from "../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/FeedContract.sol/FeedContract.json";
 import colombianDaoMarketContractAbi from "../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/ColombianDaoMarketContract.sol/ColombianDaoMarketContract.json";
 import addresses from "../../blockchain/environment/contract-address.json";
+import { ColombianNFTsResume } from '../ColombianNFTsResume';
 const feedContractAddress = addresses[0].feedcontract;
 const colombianDaoMarketContractAddress =
   addresses[1].colombiandaomarketcontract;
@@ -55,10 +56,12 @@ export function ColombianCollection() {
     const tokenIdCounter = await colombianDaoMarketContract.tokenIdCounter()
     setTokenIdCounter(ethers.BigNumber.from(tokenIdCounter).toNumber())
     setCurrency(ethers.BigNumber.from(currency).toNumber())
+
+    
     
     const filteredSaleForItems = await filterSaleForItems(await getItemsForSale(), await getPurchasedItems())
     await refactorItems(filteredSaleForItems, setItemsForSale)
-    setPurchasedItems(await getPurchasedItems())
+    await refactorItems(await getPurchasedItems(), setPurchasedItems)
     setSincronizedItems(true)
     console.log('Fetch sincronized')
     setLoading(false)
@@ -98,17 +101,25 @@ export function ColombianCollection() {
         <ColombianBanner banner={banner} />
         <h1 className="collection__title">{collection.title}</h1>
         <p className="collection__description">{collection.description}</p>
-        {!loading && auth.user.isAdmin && <ColombianSupplyNFTs tokenIdCounter={tokenIdCounter} setLoading={setLoading} setSincronizedItems={setSincronizedItems}/>}
+        {!loading && auth.user.isAdmin && 
+          <div className="collection-admin">
+            <ColombianSupplyNFTs tokenIdCounter={tokenIdCounter} setLoading={setLoading} setSincronizedItems={setSincronizedItems}/>
+            <ColombianNFTsResume currency={currency} itemsForSale={itemsForSale} purchasedItems={purchasedItems}/>
+          </div>
+        }
         {loading ? (
           <div className="collection-container__loading">
             <ColombianLoading />
           </div>
         ) : (
+          <>
+          {!loading && !auth.user.isAdmin && <ColombianNFTsResume currency={currency} itemsForSale={itemsForSale} purchasedItems={purchasedItems}/>}
           <ColombianNFTs currency={currency} setItem={setItem} setLoading={setLoading} setSincronizedItems={setSincronizedItems} setOpenModal={setOpenModal}>
               {itemsForSale ? itemsForSale.map((item, index) => (
                   <ColombianNFT key={index} item={item} />
               )) : "There don't NFTs in sale"}
           </ColombianNFTs>
+          </>
         )}
       </div>
       {openModal && (

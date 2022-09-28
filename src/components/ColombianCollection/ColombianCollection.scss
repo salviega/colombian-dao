@@ -19,6 +19,12 @@
     padding: 0 16px;
   }
 
+  &-admin {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
   &-container__loading {
     margin-top: 160px;
     margin-bottom: 160px;
