@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./ColombianNFTsResume.scss";
 
-export function ColombianNFTsResume({ currency, purchasedItems }) {
+export function ColombianNFTsResume({ auth, currency, purchasedItems }) {
+  console.log(purchasedItems)
   const owner = "0x70A792ad975Aa0977c6E9d55a14f5F2228bBC685";
   const totalItems = purchasedItems.length;
 
@@ -13,21 +14,17 @@ export function ColombianNFTsResume({ currency, purchasedItems }) {
   const ethIncome = income ? (income / currency + 0.001).toFixed(3) : 0;
 
   return (
-    <React.Fragment>
+    <div className='collection-container'>
+      <h1 className="collection-stats__title">Bought NFTs</h1>
       <div className="collection-stats">
         <table className="collection-stats__table">
           <thead>
-          <tr>
-              <th>item ID</th>
-              <th>Title</th>
-              <th>Price</th>
-              <th>Picture</th>
-            </tr>
             <tr>
-              <th>item ID</th>
-              <th>Title</th>
-              <th>Price</th>
-              <th>Picture</th>
+              <th>item IDs</th>
+              <th>Titles</th>
+              <th>Prices</th>
+              <th>Pictures</th>
+              <th>Buyers</th>
             </tr>
           </thead>
           <tbody id="offerd-table">
@@ -39,7 +36,10 @@ export function ColombianNFTsResume({ currency, purchasedItems }) {
                   {(parseInt(boughtItem.price) / currency + 0.001).toFixed(3)}
                 </td>
                 <td>
-                  <a href={boughtItem.url}>ir</a>
+                  <a href={boughtItem.url}>show</a>
+                </td>               
+                <td>
+                  <a href={`https://goerli.etherscan.io/address/${boughtItem.buyer}`}>{boughtItem.buyer.slice(0, 4) + "..." + boughtItem.buyer.slice(38)}</a>
                 </td>
               </tr>
             ))}
@@ -64,6 +64,6 @@ export function ColombianNFTsResume({ currency, purchasedItems }) {
           </tbody>
         </table>
       </div>
-    </React.Fragment>
+    </div>
   );
 }

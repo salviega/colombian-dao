@@ -83,7 +83,8 @@ export function ColombianCollection() {
         contract: item.nft,
         tokenId: item.tokenId,
         tokenStandard: metadata.tokenStandard,
-        blockchain: metadata.Blockchain
+        blockchain: metadata.Blockchain,
+        buyer: item.buyer
       }
       return refactoredItem
     })
@@ -104,7 +105,7 @@ export function ColombianCollection() {
         {!loading && auth.user.isAdmin && 
           <div className="collection-admin">
             <ColombianSupplyNFTs tokenIdCounter={tokenIdCounter} setLoading={setLoading} setSincronizedItems={setSincronizedItems}/>
-            <ColombianNFTsResume currency={currency} itemsForSale={itemsForSale} purchasedItems={purchasedItems}/>
+            <ColombianNFTsResume auth={auth} currency={currency} itemsForSale={itemsForSale} purchasedItems={purchasedItems}/>
           </div>
         }
         {loading ? (
