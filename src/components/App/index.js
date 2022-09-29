@@ -11,7 +11,7 @@ import { ColombianHome } from "../ColombianHome";
 import { ColombianProjects } from "../ColombianProjects";
 import { ColombianAbout } from "../ColombianAbout";
 import { ColombianCollection } from "../ColombianCollection";
-import { ColombianError } from "../ColombianError";
+import { ColombianFound404 } from "../ColombianFound404";
 
 function App() {
   const auth = useAuth();
@@ -50,7 +50,7 @@ function App() {
             <Route path="/collection" element={<ColombianCollection />} />
             <Route path="/projects" element={<ColombianProjects />} />
             <Route path="/form" element={<ColombianApply />} />
-            <Route path="*" element={<ColombianError />} />
+            <Route path="*" element={<ColombianFound404 />} />
           </Routes>
         </div>
       </main>

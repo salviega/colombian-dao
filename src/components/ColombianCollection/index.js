@@ -1,7 +1,7 @@
 import "./ColombianCollection.scss";
 import collection from "../../asserts/json/collection.json";
 import banner from "../../asserts/images/collection-banner-horizontal.jpg";
-import React from "react";
+import React, { cloneElement } from "react";
 import { ethers } from "ethers";
 import { ColombianLoading } from "../../shared/ColombianLoading";
 import { ColombianBanner } from "../../shared/ColombianBanner";
@@ -10,13 +10,14 @@ import { ColombianNFT } from "../ColombianNFT";
 import { ColombianModal } from '../../shared/ColombianModal';
 import { ColombianNFTDetails } from '../ColombianNFTDetails';
 import { ColombianSupplyNFTs } from '../ColombianSupplyNFTs';
+import { ColombianNFTsResume } from '../ColombianNFTsResume';
+import { ColombiaPurchasedNFTDetails } from '../ColombiaPurchasedNFTDetails';
 import { useAuth } from '../../hooks/useAuth';
 import { getDataColombianSubGraph } from "../../middleware/getDataColombianSubGraph";
 import feedContractAbi from "../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/FeedContract.sol/FeedContract.json";
 import colombianDaoMarketContractAbi from "../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/ColombianDaoMarketContract.sol/ColombianDaoMarketContract.json";
 import addresses from "../../blockchain/environment/contract-address.json";
-import { ColombianNFTsResume } from '../ColombianNFTsResume';
-import { ColombiaPurchasedNFTDetails } from '../ColombiaPurchasedNFTDetails';
+import { ColombianError } from '../ColombianError';
 const feedContractAddress = addresses[0].feedcontract;
 const colombianDaoMarketContractAddress =
   addresses[1].colombiandaomarketcontract;
@@ -37,6 +38,7 @@ export function ColombianCollection() {
   const [openModalSummary, setOpenModalSummary] = React.useState(false)
 
   const fetchData = async () => {
+    console.log(cloneElement)
     try {
       let provider = new ethers.providers.JsonRpcProvider(
       "https://rpc.ankr.com/eth_goerli"
@@ -59,8 +61,6 @@ export function ColombianCollection() {
     setTokenIdCounter(ethers.BigNumber.from(tokenIdCounter).toNumber())
     setCurrency(ethers.BigNumber.from(currency).toNumber())
 
-    
-    
     const filteredSaleForItems = await filterSaleForItems(await getItemsForSale(), await getPurchasedItems())
     await refactorItems(filteredSaleForItems, setItemsForSale)
     await refactorItems(await getPurchasedItems(), setPurchasedItems)
@@ -104,19 +104,20 @@ export function ColombianCollection() {
         <ColombianBanner banner={banner} />
         <h1 className="collection__title">{collection.title}</h1>
         <p className="collection__description">{collection.description}</p>
-        {!loading && auth.user.isAdmin && 
+        {error && <ColombianError />}
+        {!loading && !error && auth.user.isAdmin && 
           <div className="collection-admin">
             <ColombianSupplyNFTs tokenIdCounter={tokenIdCounter} setLoading={setLoading} setSincronizedItems={setSincronizedItems}/>
             <ColombianNFTsResume currency={currency} itemsForSale={itemsForSale} purchasedItems={purchasedItems} setItem={setItem} setOpenModalSummary={setOpenModalSummary}/>
           </div>
         }
-        {loading ? (
+        {loading && !error ? (
           <div className="collection-container__loading">
             <ColombianLoading />
           </div>
         ) : (
           <>
-          {!loading && !auth.user.isAdmin && <ColombianNFTsResume currency={currency} itemsForSale={itemsForSale} purchasedItems={purchasedItems} setItem={setItem} setOpenModalSummary={setOpenModalSummary}/>}
+          {!loading && !error && !auth.user.isAdmin && <ColombianNFTsResume currency={currency} itemsForSale={itemsForSale} purchasedItems={purchasedItems} setItem={setItem} setOpenModalSummary={setOpenModalSummary}/>}
           <ColombianNFTs currency={currency} setItem={setItem} setLoading={setLoading} setSincronizedItems={setSincronizedItems} setOpenModal={setOpenModal}>
               {itemsForSale ? itemsForSale.map((item, index) => (
                   <ColombianNFT key={index} item={item} />
