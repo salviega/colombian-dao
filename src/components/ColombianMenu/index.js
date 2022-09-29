@@ -60,11 +60,6 @@ const routes = [
     private: false,
   },
   {
-    to: "/proposals",
-    title: "My Proposals",
-    private: true,
-  },
-  {
     to: "/form",
     title: "Apply for Colombian DAO",
     private: true,
