@@ -14,7 +14,7 @@ export function ColombianNFTDetails({
   currency,
   setLoading,
   setSincronizedItems,
-  setOpenModal,
+  setOpenModal
 }) {
   const buyItem = async () => {
     try {

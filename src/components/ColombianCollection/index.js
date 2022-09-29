@@ -16,6 +16,7 @@ import feedContractAbi from "../../blockchain/hardhat/artifacts/src/blockchain/h
 import colombianDaoMarketContractAbi from "../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/ColombianDaoMarketContract.sol/ColombianDaoMarketContract.json";
 import addresses from "../../blockchain/environment/contract-address.json";
 import { ColombianNFTsResume } from '../ColombianNFTsResume';
+import { ColombiaPurchasedNFTDetails } from '../ColombiaPurchasedNFTDetails';
 const feedContractAddress = addresses[0].feedcontract;
 const colombianDaoMarketContractAddress =
   addresses[1].colombiandaomarketcontract;
@@ -33,6 +34,7 @@ export function ColombianCollection() {
   const [error, setError] = React.useState(false);
   const [sincronizedItems, setSincronizedItems] = React.useState(true)
   const [openModal, setOpenModal] = React.useState(false)
+  const [openModalSummary, setOpenModalSummary] = React.useState(false)
 
   const fetchData = async () => {
     try {
@@ -105,7 +107,7 @@ export function ColombianCollection() {
         {!loading && auth.user.isAdmin && 
           <div className="collection-admin">
             <ColombianSupplyNFTs tokenIdCounter={tokenIdCounter} setLoading={setLoading} setSincronizedItems={setSincronizedItems}/>
-            <ColombianNFTsResume currency={currency} itemsForSale={itemsForSale} purchasedItems={purchasedItems}/>
+            <ColombianNFTsResume currency={currency} itemsForSale={itemsForSale} purchasedItems={purchasedItems} setItem={setItem} setOpenModalSummary={setOpenModalSummary}/>
           </div>
         }
         {loading ? (
@@ -114,7 +116,7 @@ export function ColombianCollection() {
           </div>
         ) : (
           <>
-          {!loading && !auth.user.isAdmin && <ColombianNFTsResume currency={currency} itemsForSale={itemsForSale} purchasedItems={purchasedItems}/>}
+          {!loading && !auth.user.isAdmin && <ColombianNFTsResume currency={currency} itemsForSale={itemsForSale} purchasedItems={purchasedItems} setItem={setItem} setOpenModalSummary={setOpenModalSummary}/>}
           <ColombianNFTs currency={currency} setItem={setItem} setLoading={setLoading} setSincronizedItems={setSincronizedItems} setOpenModal={setOpenModal}>
               {itemsForSale ? itemsForSale.map((item, index) => (
                   <ColombianNFT key={index} item={item} />
@@ -128,6 +130,11 @@ export function ColombianCollection() {
           <ColombianNFTDetails item={item} currency={currency} setLoading={setLoading} setSincronizedItems={setSincronizedItems} setOpenModal={setOpenModal} />
         </ColombianModal>
       )}
+      {openModalSummary && (
+        <ColombianModal>
+          <ColombiaPurchasedNFTDetails item={item} currency={currency} setOpenModalSummary={setOpenModalSummary} />
+        </ColombianModal>
+      )}      
     </React.Fragment>
   );
 }

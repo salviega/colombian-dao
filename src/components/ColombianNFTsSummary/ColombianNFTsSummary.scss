@@ -28,29 +28,9 @@
       text-align: center;
       border: 1px solid black;
       width: 258px;
-        
-      a {
-        color: #69a6ce;
-        text-decoration: none;
-        max-width: max-content;
-        &:hover {
-          border: 1.5px solid black;
-          border-bottom: 2px solid black;
-          outline: 0.1px solid black;  
-        }
-      }
-
+      
       p {
         cursor: pointer;
-        margin: 0px;
-        padding: 0px;
-        display: inline;
-        width: min-content;
-        &:hover {
-          border: 1.5px solid black;
-          border-bottom: 2px solid black;
-          outline: 0.1px solid black;  
-        }
       }
     }
   }

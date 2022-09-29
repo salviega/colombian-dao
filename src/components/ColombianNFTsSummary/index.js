@@ -1,9 +1,14 @@
 import { faEthereum } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import "./ColombianNFTsResume.scss";
+import "./ColombianNFTsSummary.scss";
 
-export function ColombianNFTsResume({ currency, purchasedItems, setItem, setOpenModalSummary }) {
+export function ColombianNFTsSummary({
+  currency,
+  purchasedItems,
+  setItem,
+  setOpenModalSummary,
+}) {
   const owner = "0x70A792ad975Aa0977c6E9d55a14f5F2228bBC685";
   const totalItems = purchasedItems.length;
 
@@ -18,7 +23,7 @@ export function ColombianNFTsResume({ currency, purchasedItems, setItem, setOpen
   };
 
   return (
-    <div className='collection-container'>
+    <div className="collection-container">
       <h1 className="collection-stats__title">Bought NFTs</h1>
       <div className="collection-stats">
         <table className="collection-stats__table">
@@ -40,10 +45,16 @@ export function ColombianNFTsResume({ currency, purchasedItems, setItem, setOpen
                   {(parseInt(boughtItem.price) / currency + 0.001).toFixed(3)}
                 </td>
                 <td>
-                  <p onClick={() => {onShowDetail(boughtItem)}}>show</p>
-                </td>               
+                  <button onClick={onShowDetail(boughtItem)}>show</button>
+                </td>
                 <td>
-                  <a href={`https://goerli.etherscan.io/address/${boughtItem.buyer}`}>{boughtItem.buyer.slice(0, 4) + "..." + boughtItem.buyer.slice(38)}</a>
+                  <a
+                    href={`https://goerli.etherscan.io/address/${boughtItem.buyer}`}
+                  >
+                    {boughtItem.buyer.slice(0, 4) +
+                      "..." +
+                      boughtItem.buyer.slice(38)}
+                  </a>
                 </td>
               </tr>
             ))}
@@ -56,7 +67,9 @@ export function ColombianNFTsResume({ currency, purchasedItems, setItem, setOpen
                     icon={faEthereum}
                     className="collection-stats-total__attribute"
                   />
-                  <p className="collection-modal-description-sale__attribute">{ethIncome}</p>
+                  <p className="collection-modal-description-sale__attribute">
+                    {ethIncome}
+                  </p>
                 </div>
               </td>
               <td>
