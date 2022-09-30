@@ -8,7 +8,7 @@ import { ColombianFooter } from "../ColombianFooter";
 import { ColombianMenu } from "../ColombianMenu";
 import { ColombianApply } from "../ColombianApply";
 import { ColombianHome } from "../ColombianHome";
-import { ColombianProjects } from "../ColombianProjects";
+import { ColombianTeam } from "../ColombianTeam";
 import { ColombianAbout } from "../ColombianAbout";
 import { ColombianCollection } from "../ColombianCollection";
 import { ColombianFound404 } from "../ColombianFound404";
@@ -48,7 +48,7 @@ function App() {
             <Route path="/" element={<ColombianHome />} />
             <Route path="/about" element={<ColombianAbout />} />
             <Route path="/collection" element={<ColombianCollection />} />
-            <Route path="/projects" element={<ColombianProjects />} />
+            <Route path="/projects" element={<ColombianTeam />} />
             <Route path="/form" element={<ColombianApply />} />
             <Route path="*" element={<ColombianFound404 />} />
           </Routes>

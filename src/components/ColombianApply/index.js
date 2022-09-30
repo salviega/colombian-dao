@@ -1,14 +1,18 @@
 import './ColombianApply.scss'
 import React from 'react';
-import { useAuth, AuthRoute } from '../../hooks/useAuth';
+import collection from "../../asserts/json/apply.json";
+import banner from "../../asserts/images/apply-banner-horizontal.jpg";
+import { useAuth } from '../../hooks/useAuth';
+import { ColombianBanner } from '../../shared/ColombianBanner';
 
 export function ColombianApply() {
   const auth = useAuth()
   
   return (
-    <AuthRoute>
-      <h1>Apply for Colombian DAO</h1>
-      <p>{auth.user.walletAddress}</p>
-    </ AuthRoute>
+        <div className="collection">
+          <ColombianBanner banner={banner} />
+          <h1 className="collection__title">{collection.title}</h1>
+          <p className="collection__description">{collection.description}</p>
+    </ div>
   )
 }

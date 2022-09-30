@@ -8,7 +8,7 @@ import addresses from "../../blockchain/environment/contract-address.json";
 const colombianDaoMarketContractAddress =
   addresses[1].colombiandaomarketcontract;
 
-export function ColombianNFT({ index, item, currency, setItem, setLoading, setSincronizedItems, setOpenModal }) {
+export function ColombianNFT({ key, item, currency, setItem, setLoading, setSincronizedItems, setOpenModal }) {
   const onBuy = async () => {
     try {
       const weiPrice = (parseInt(item.price) / currency * 10 ** 18)
