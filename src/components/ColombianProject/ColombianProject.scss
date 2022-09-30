@@ -1,4 +1,5 @@
 .project-card {
+  position: relative;
   margin-top: 10px;
   border-radius: 6px;
   width: 431px;
@@ -11,104 +12,26 @@
     padding: 0px;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
-    height: 285px;
+    height: 100%;
     overflow: hidden;
 
+    &:hover {
+      opacity:0.4 !important;
+      p {
+        display: flex;
+        font-weight: bold;
+      }
+    }
+
     img {
-      width: 295px;
-      height: 295px;
-      transition: transform 0.3s ease;
-
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
-  }
-
-  &-description {
-    width: 271px;
-    height: 112px;
-    margin: 12px;
-
-    &__title {
-      font-size: 16px;
-      font-weight: bold;
-      margin: 12px 0px;
-      max-width: max-content;
-
-      p {
-        max-width: max-content;
-      }
+      width: 100%;
+      height: 100%;
     }
 
-    &__price {
-      font-size: 12px;
-      margin: 0px;
-      max-width: max-content;
-
-      p {
-        max-width: max-content;
-      }
-    }
-
-    &-container {
-      margin: 0px;
-      padding-left: 3px;
-      display: flex;
-      align-items: center;
-      column-gap: 8px;
-      max-width: max-content;
-
-      &__attribute {
-        font-size: 14px;
-        margin: 12px 0px;
-        max-width: max-content;
-
-        p {
-          max-width: max-content;
-        }
-      }
-
-      &__currency {
-        color: #b0b0b0;
-        font-size: 12px;
-        margin: 12px 0px;
-        padding-top: 3px;
-        max-width: max-content;
-
-        p {
-          max-width: max-content;
-        }
-      }
-    }
-
-    &__buy {
-      position: relative;
-      left: 30%;
-      top: -3.5%;
-      display: flex;
-      align-content: center;
-      justify-content: center;
-      max-width: max-content;
-      margin: 0;
-      padding: 0;
-
-      button {
-        cursor: pointer;
-        display: inline-block;
-        text-decoration: none;
-        background: #fff;
-        border: 2px solid #69a6ce;
-        color: #69a6ce;
-        padding: 10px 25px;
-        border-radius: 25px;
-        transition: all 0.27s ease;
-
-        &:hover {
-          color: #fff;
-          background-color: lighten(#69a6ce, 15%);
-        }
-      }
+    p {
+      position: absolute;
+      bottom: 0px;
+      display: none;
     }
   }
 }

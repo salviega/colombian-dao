@@ -8,20 +8,9 @@ export function ColombianProject({key, project, setOpenModal }) {
   return (
     <div className="project-card">
       <figure onClick={onShowDetail}>
-        <img src={project.url} alt="logo" />
+        <img src={project.img} alt="logo" />
+        <p className="gray-text">Jajaja</p>
       </figure>
-      <div className="project-card-description">
-        <p className="project-card-description__title">{project.title}</p>
-        <p className="project-card-description__price">Price</p>
-        <div className="project-card-description-container">
-          <p className="project-card-description-container__attribute">
-            {project.price}
-          </p>
-          <p className="project-card-description-container__currency">
-            ${project.price}
-          </p>
-        </div>
-      </div>
     </div>
   );
 }
