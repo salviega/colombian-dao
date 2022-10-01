@@ -16,22 +16,50 @@
     overflow: hidden;
 
     &:hover {
-      opacity:0.4 !important;
-      p {
-        display: flex;
-        font-weight: bold;
-      }
+      opacity:0.65 !important;
     }
 
     img {
       width: 100%;
       height: 100%;
+      transition: transform 0.2s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
     }
+  }
+  
+  &-onhover {
+    display: none;
+  }
 
-    p {
+  &:hover {
+
+    .project-card-onhover {
       position: absolute;
       bottom: 0px;
-      display: none;
+      margin: 0px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+
+      &__title {
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-weight: bold;
+        font-size: 24px;
+      }
+      
+      &__description {
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+      }
     }
   }
 }
