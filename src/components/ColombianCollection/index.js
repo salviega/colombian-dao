@@ -38,7 +38,6 @@ export function ColombianCollection() {
   const [openModalSummary, setOpenModalSummary] = React.useState(false)
 
   const fetchData = async () => {
-    console.log(cloneElement)
     try {
       let provider = new ethers.providers.JsonRpcProvider(
       "https://rpc.ankr.com/eth_goerli"

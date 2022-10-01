@@ -4,6 +4,7 @@ import collection from "../../asserts/json/apply.json";
 import banner from "../../asserts/images/apply-banner-horizontal.jpg";
 import { useAuth } from '../../hooks/useAuth';
 import { ColombianBanner } from '../../shared/ColombianBanner';
+import { ColombianApplyForm } from '../ColombianApplyForm';
 
 export function ColombianApply() {
   const auth = useAuth()
@@ -13,6 +14,7 @@ export function ColombianApply() {
           <ColombianBanner banner={banner} />
           <h1 className="collection__title">{collection.title}</h1>
           <p className="collection__description">{collection.description}</p>
+          <ColombianApplyForm />
     </ div>
   )
 }
