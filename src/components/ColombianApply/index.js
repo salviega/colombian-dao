@@ -10,11 +10,11 @@ export function ColombianApply() {
   const auth = useAuth()
   
   return (
-        <div className="collection">
+        <div className="apply">
           <ColombianBanner banner={banner} />
-          <h1 className="collection__title">{collection.title}</h1>
-          <p className="collection__description">{collection.description}</p>
-          <ColombianApplyForm />
+          <h1 className="apply__title">{collection.title}</h1>
+          <p className="apply__description">{collection.description}</p>
+          <ColombianApplyForm auth={auth}/>
     </ div>
   )
 }

@@ -2,13 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import "./ColombianApplyForm.scss";
-import { useAuth } from "../../hooks/useAuth";
 
-export function ColombianApplyForm() {
-  const auth = useAuth();
-  const price = React.useRef();
-  const tokenURI = React.useRef();
-  const tokenId = React.useRef();
+export function ColombianApplyForm({auth}) {
 
   const putInSale = async (event) => {
     event.preventDefault();
