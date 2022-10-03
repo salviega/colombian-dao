@@ -1,0 +1,35 @@
+.collection {
+  
+  &__title {
+    font-size: 46px;
+    padding: 0 16px;
+    margin: 30px 0;
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 22.5px;
+    width: 70%;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: 24px;
+    padding: 0 16px;
+  }
+
+  &-admin {
+    display: flex;
+    column-gap: 3.5rem;
+  }
+
+  &-container__loading {
+    margin-top: 160px;
+    margin-bottom: 160px;
+    height: auto;
+    width: auto;
+  }
+}
+
+

@@ -50,7 +50,7 @@ const routes = [
     private: false,
   },
   {
-    to: "/collection",
+    to: "/collections",
     title: "NFTs",
     private: true,
   },

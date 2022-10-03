@@ -10,8 +10,9 @@ import { ColombianApply } from "../ColombianApply";
 import { ColombianHome } from "../ColombianHome";
 import { ColombianTeam } from "../ColombianTeam";
 import { ColombianAbout } from "../ColombianAbout";
-import { ColombianCollection } from "../ColombianCollection";
+import { ColombianCollections } from "../ColombianCollections";
 import { ColombianFound404 } from "../ColombianFound404";
+import { ColombianCollection } from '../ColombianCollection';
 
 function App() {
   const auth = useAuth();
@@ -47,7 +48,8 @@ function App() {
           <Routes>
             <Route path="/" element={<ColombianHome />} />
             <Route path="/about" element={<ColombianAbout />} />
-            <Route path="/collection" element={<ColombianCollection />} />
+            <Route path="/collections" element={<ColombianCollections />} />
+            <Route path="/collections/:slug" element={<ColombianCollection/>} />
             <Route path="/projects" element={<ColombianTeam />} />
             <Route path="/form" element={<ColombianApply />} />
             <Route path="*" element={<ColombianFound404 />} />
