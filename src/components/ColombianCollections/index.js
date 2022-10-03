@@ -18,7 +18,7 @@ import feedContractAbi from "../../blockchain/hardhat/artifacts/src/blockchain/h
 import colombianDaoMarketContractAbi from "../../blockchain/hardhat/artifacts/src/blockchain/hardhat/contracts/ColombianDaoMarketContract.sol/ColombianDaoMarketContract.json";
 import addresses from "../../blockchain/environment/contract-address.json";
 import { ColombianError } from '../ColombianError';
-import { Link, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 const feedContractAddress = addresses[0].feedcontract;
 const colombianDaoMarketContractAddress =
   addresses[1].colombiandaomarketcontract;
@@ -105,7 +105,6 @@ export function ColombianCollections() {
 
   return (
     <React.Fragment>
-      <Link to={`/collections/biolumen`}>CLICK</Link>
       <div className="collection">
         <ColombianBanner banner={banner} />
         <h1 className="collection__title">{collection.title}</h1>

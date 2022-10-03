@@ -7,7 +7,6 @@ export function ColombianCollection() {
   const auth = useAuth()
   const { slug } = useParams()
   const project = slug === projects ? projects : null
-  console.log(project)
 
   if(auth.user.walletAddress === "Connect your wallet") {
     return <Navigate to='/'/>
