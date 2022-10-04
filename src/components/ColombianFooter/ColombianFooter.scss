@@ -1,63 +1,96 @@
 footer {
-  align-content: center;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  max-height: max-content;
-  padding: 0;
-  position: absolute;
-  width: 100%;
+  height: 426px;
 
   .footer-container {
-    align-content: center;
-    border-top: 1.5px solid #212121;
+    height: 313.84px;
     display: flex;
+    align-items: center;
     justify-content: center;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0;
-    width: 97%;
+    background: #9203f1;
 
-    &__copyright {
-      align-items: center;
-      display: flex;
-      font-size: 14px;
-      justify-content: center;
-      margin: 0;
+    &__ads {
+      max-height: max-content;
       max-width: max-content;
-      padding: 0;
-      padding-bottom: 6px;
-      padding-left: 13px;
-      padding-top: 6px;
-    }
-
-    &__construction {
-      align-items: center;
-      display: flex;
-      font-size: 14px;
-      justify-content: center;
-      margin: 0;
-      max-width: max-content;
-      padding: 0;
+      padding-left: 74px;
+      h1 {
+        &::first-line {
+          color: #ffffff;
+        }
+        margin: 0px;
+        padding: 0px;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 80px;
+        line-height: 119px;
+        color: rgba(255, 241, 0, 1);
+      }
     }
 
     &__network {
-      align-items: center;
-      column-gap: 5px;
+      position: relative;
+      height: 238px;
+      padding-right: 67px;
       display: flex;
-      font-size: 18px;
-      justify-content: center;
-      margin: 0;
-      max-width: max-content;
-      padding: 0;
-      padding-right: 13px;
-      
-      a { 
-        color: inherit; 
+      align-items: center;
+      justify-content: right;
+      column-gap: 20px;
+
+      a {
+        width: 81px;
+        height: 79.69px;
+        color: inherit;
+        background: #9203f1;
         text-decoration: none;
       }
     }
 
+    &-icon {
+      position: absolute;
+      bottom: 10%;
+      width: 81px;
+      height: 79.69px;
+      border-radius: 50%;
+      background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
+      
+      &__icon {
+        position: relative;
+        left: 13%;
+        top: 13%;
+        width: 61px;
+        height: 59.69px;
+      }
+    }
+
+    &-copyright {
+      height: 112.16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 50rem;
+      
+
+      &__copyright {
+        position: relative;
+        float: left;
+        margin: 0;
+        padding: 0;
+        max-width: max-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      } 
+  
+      &__construction {
+        position: relative;
+        float: right;
+        margin: 0;
+        padding: 0;
+        max-width: max-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+      }
+    }
   }
 }
