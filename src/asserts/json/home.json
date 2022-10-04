@@ -1,4 +1,12 @@
 {
-  "title": "Home",
-  "description": "As the underlying technology develops, a growing pool of artists are selling verified, immutable works to art lovers and speculators, and the space as a whole is waking up to the power and potential of decentralized networks and currencies. With creators and collectors generating meaningful revenue through an entirely digital ecosystem, the tokenization of gifs, memes, and MP4s is emerging as the most exciting and relevant blockchain use case. From SuperRare to Josie to JOY, browse and trade NFTs from some of the world's top crypto artists on OpenSea."
+  "title": "What is Marca Pais decentralizado?",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum fermentum luctus. Mauris sed ligula diam. Curabitur non libero et libero pretium scelerisque. Praesent varius semper consequat. Donec at rutrum ligula. Donec rhoncus elementum ligula. Duis porta pharetra massa. Duis sagittis orci a mauris imperdiet.",
+  "snapshot": {
+    "title": "Nombre de la colección",
+    "subtitle": "Nuestra primera colección NFT"
+  },
+  "apply": {
+    "title": "Apply with your proyect",
+    "subtitle": "Have to support CREA COLOMBIA"
+  }
 }

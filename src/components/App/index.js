@@ -9,7 +9,6 @@ import { ColombianMenu } from "../ColombianMenu";
 import { ColombianApply } from "../ColombianApply";
 import { ColombianHome } from "../ColombianHome";
 import { ColombianTeam } from "../ColombianTeam";
-import { ColombianAbout } from "../ColombianAbout";
 import { ColombianCollections } from "../ColombianCollections";
 import { ColombianFound404 } from "../ColombianFound404";
 import { ColombianCollection } from '../ColombianCollection';
@@ -47,7 +46,6 @@ function App() {
         <div className="main__container">
           <Routes>
             <Route path="/" element={<ColombianHome />} />
-            <Route path="/about" element={<ColombianAbout />} />
             <Route path="/collections" element={<ColombianCollections />} />
             <Route path="/collections/:slug" element={<ColombianCollection/>} />
             <Route path="/projects" element={<ColombianTeam />} />
