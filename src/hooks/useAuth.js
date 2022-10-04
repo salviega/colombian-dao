@@ -13,11 +13,18 @@ export function AuthProvider({ children }) {
 
   const login = ({ walletAddress }) => {
     let isAdmin = false
-    const adminWallet = adminWallets.find(wallet => wallet === walletAddress)
-    if(adminWallet === walletAddress) isAdmin = true
-    const stringifiedUser = JSON.stringify({ walletAddress, isAdmin })
-    localStorage.setItem('wallet', stringifiedUser)
-    setUser({ walletAddress, isAdmin });
+    var adminWallet = adminWallets.find(wallet => wallet.toLowerCase() === walletAddress) 
+    try {
+      adminWallet = adminWallet.toLowerCase()
+      if(adminWallet.toLowerCase() === walletAddress) isAdmin = true
+      const stringifiedUser = JSON.stringify({ walletAddress, isAdmin })
+      localStorage.setItem('wallet', stringifiedUser)
+      setUser({ walletAddress, isAdmin });
+    } catch {
+      const stringifiedUser = JSON.stringify({ walletAddress, isAdmin })
+      localStorage.setItem('wallet', stringifiedUser)
+      setUser({ walletAddress, isAdmin });
+    }
   };
 
   const logout = () => {

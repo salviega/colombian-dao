@@ -18,6 +18,7 @@ export function ColombianWallet() {
       const web3Provider = new ethers.providers.Web3Provider(window.ethereum)
       await web3Provider.send('eth_requestAccounts', [])
       const accounts = await web3Provider.send('eth_requestAccounts', [])
+      console.log("accounts[0]: ", accounts[0])
 
       const web3Signer = web3Provider.getSigner()
       const chainId = await web3Signer.getChainId()
