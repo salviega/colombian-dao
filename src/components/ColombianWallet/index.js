@@ -34,8 +34,6 @@ export function ColombianWallet() {
     } else {
       auth.logout()
       setLoading(false)
-
-      // if (window.location.href.includes('mypensions') || window.location.href.includes('register')) 
     }
   }
 
