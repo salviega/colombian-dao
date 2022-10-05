@@ -2,8 +2,9 @@ import "./ColombianHome.scss";
 import React from "react";
 import logo from "../../asserts/images/colombian-dao-logo2.svg";
 import home from "../../asserts/json/home.json";
-import banner from "../../asserts/images/collection-banner-horizontal.jpg";
+import banner from "../../asserts/images/banner-collection-horizontal.jpg";
 import { ColombianWallet } from "../ColombianWallet";
+import { ColombianRoadMap } from '../ColombianRoadMap';
 
 export function ColombianHome() {
 
@@ -57,6 +58,7 @@ export function ColombianHome() {
           <ColombianWallet />
         </div>
       </div>
+      <ColombianRoadMap />
     </div>
   );
 }

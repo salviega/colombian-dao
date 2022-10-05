@@ -1,6 +1,5 @@
 import "./ColombianTeam.scss";
 import team from "../../asserts/json/team.json";
-import banner from "../../asserts/images/my-projects-banner-horizontal.jpg";
 import React from "react";
 import { ColombianBanner } from "../../shared/ColombianBanner";
 import { ColombianLoading } from "../../shared/ColombianLoading";
@@ -17,7 +16,6 @@ export function ColombianTeam() {
 
   return (
     <div className="team">
-      <ColombianBanner banner={banner} />
       <h1 className="team__title">{team.information.title}</h1>
       <p className="team__description">{team.information.description}</p>
       {loading ? (

@@ -1,10 +1,8 @@
 import "./ColombianCollections.scss";
 import collection from "../../asserts/json/collection.json";
-import banner from "../../asserts/images/collection-banner-horizontal.jpg";
 import React from "react";
 import { ethers } from "ethers";
 import { ColombianLoading } from "../../shared/ColombianLoading";
-import { ColombianBanner } from "../../shared/ColombianBanner";
 import { ColombianNFTs } from "../ColombianNFTs";
 import { ColombianNFT } from "../ColombianNFT";
 import { ColombianModal } from '../../shared/ColombianModal';
@@ -106,7 +104,6 @@ export function ColombianCollections() {
   return (
     <React.Fragment>
       <div className="collection">
-        <ColombianBanner banner={banner} />
         <h1 className="collection__title">{collection.title}</h1>
         <p className="collection__description">{collection.description}</p>
         {error && <ColombianError />}

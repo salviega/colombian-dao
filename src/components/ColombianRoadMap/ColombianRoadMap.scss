@@ -1,0 +1,114 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__content1 {
+    margin-bottom: 42px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 14.06%, #FFF100 51.56%, rgba(255, 255, 255, 0) 85.94%);
+  }
+  &__content2 {
+    margin-bottom: 42px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 14.06%, #01A6E8 51.56%, rgba(255, 255, 255, 0) 85.94%);
+  }
+  &__content3 {
+    margin-bottom: 42px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 14.06%, #FF3C82 51.56%, rgba(255, 255, 255, 0) 85.94%);
+  }
+}
+
+.home-roadmap {
+  box-sizing: border-box;
+  height: 1845px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &-fase {
+    margin-left: 100px;
+    width: 191px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+
+    &__title {
+      width: 191px;
+      height: 89px;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 60px;
+      line-height: 89px;
+      color: #000000;
+    }
+
+    &__subtitle {
+      width: 159px;
+      height: 74px;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 50px;
+      line-height: 74px;
+      color: #000000;
+      opacity: 0.5;
+    }
+  }
+
+  &-information {
+    margin-right: 30px;
+    padding-left: 48.73px;
+    width: 864px;
+    height: 531px;
+    mix-blend-mode: normal;
+    background: #FFFFFF;
+    border: 5px solid #FF3C82;
+    border-radius: 61px;
+
+    &__title {
+      margin: 0px;
+      margin-top: 37.25px;
+      padding: 0px;
+      width: 450.42px;
+      height: 49.14px;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 42px;
+      line-height: 62px;
+      color: #000000;
+    }
+
+    &__description {
+      margin: 0px;
+      padding: 0px;
+      display: flex;
+      width: 715.44px;
+      height: 383.59px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 36px;
+      color: #000000;
+
+      strong {
+        margin: 0px;
+        margin-right: 10px;
+        padding: 0px;
+        width: max-content;
+      }
+    }
+  }
+}

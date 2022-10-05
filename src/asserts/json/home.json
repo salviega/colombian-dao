@@ -8,5 +8,27 @@
   "apply": {
     "title": "Apply with your proyect",
     "subtitle": "Have to support CREA COLOMBIA"
+  },
+  "roadmap": {
+    "fase": {
+      "uno": "Fase 1",
+      "dos": "Fase 2",
+      "tres": "Fase 3"
+    },
+    "title": {
+      "uno": "Road Map - Fase 1",
+      "dos": "Road Map - Fase 2",
+      "tres": "Road Map - Fase 3"
+    },
+    "bullet": {
+      "uno": "1.",
+      "dos": "2.",
+      "tres": "3."
+    },
+    "description": {
+      "uno": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum fermentum luctus. Mauris sed ligula diam. Curabitur non libero et libero pretium scelerisque. Praesent varius semper consequat. Donec at rutrum ligula. Donec rhoncus elementum ligula. Duis porta pharetra massa. Duis sagittis orci a mauris imperdiet.",
+      "dos": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum fermentum luctus. Mauris sed ligula diam. Curabitur non libero et libero pretium scelerisque. Praesent varius semper consequat. Donec at rutrum ligula. Donec rhoncus elementum ligula. Duis porta pharetra massa. Duis sagittis orci a mauris imperdiet.",
+      "tres": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum fermentum luctus. Mauris sed ligula diam. Curabitur non libero et libero pretium scelerisque. Praesent varius semper consequat. Donec at rutrum ligula. Donec rhoncus elementum ligula. Duis porta pharetra massa. Duis sagittis orci a mauris imperdiet."
+    }
   }
 }
