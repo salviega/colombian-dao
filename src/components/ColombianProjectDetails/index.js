@@ -1,39 +1,38 @@
-import './ColombianProjectDetails.scss'
-import React from 'react'
+import "./ColombianProjectDetails.scss";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-export function ColombianProjectDetails({ item:project, setOpenModal }) {
+export function ColombianProjectDetails({ item: project, setOpenModal }) {
   const closeModal = () => {
     setOpenModal(false);
   };
 
   return (
-    <div className="collection-modal">
-      <div className="collection-modal__cancel" onClick={closeModal}>
-        <FontAwesomeIcon icon={faXmark} />
-      </div>
-        <div className="collection-modal__title">
-          <p className="collection-modal-description-container__title">
+      <div className="collection-modal-container">
+        <div
+          className="collection-modal-container__cancel"
+          onClick={closeModal}
+        >
+          <FontAwesomeIcon icon={faXmark} />
+        </div>
+        <div className="collection-modal-container-head">
+          <p className="collection-modal-container-head__title">
             {project.name}
           </p>
-          <p className="collection-modal-description-container__atrribute">
+          <p className="collection-modal-container-head__slogan">
             {project.slogan}
           </p>
         </div>
-      <div className="collection-modal__header">
-        <figure>
-          <img src={project.img} alt="logo" />
-        </figure>
-        <div className="collection-modal-description">
-          <div className="collection-modal-description-container">
-            <p className="collection-modal-description__text">{project.description}</p>
-            <p className="collection-modal-description-container__attribute">
-              <a href={project.github}>{project.github}</a>
-            </p>
-          </div>
+        <div className="collection-modal-container__vector"></div>
+        <div className="collection-modal-container-project">
+          <figure>
+            <img src={project.img} alt="logo" />
+          </figure>
+          <p className="collection-modal-container-project__description">
+            {project.description}
+          </p>
         </div>
       </div>
-    </div>
-  )
+  );
 }

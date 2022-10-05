@@ -5,6 +5,7 @@ import home from "../../asserts/json/home.json";
 import banner from "../../asserts/images/banner-collection-horizontal.jpg";
 import { ColombianWallet } from "../ColombianWallet";
 import { ColombianRoadMap } from '../ColombianRoadMap';
+import { ColombianTeam } from '../ColombianTeam';
 
 export function ColombianHome() {
 
@@ -59,6 +60,11 @@ export function ColombianHome() {
         </div>
       </div>
       <ColombianRoadMap />
+      <ColombianTeam/>
+      <div className='home-members'>
+        <p className='home-members__title'>{home.members.title}</p>
+        <div className='home-members__vector'></div>
+      </div>
     </div>
   );
 }

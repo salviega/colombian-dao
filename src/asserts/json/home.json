@@ -30,5 +30,8 @@
       "dos": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum fermentum luctus. Mauris sed ligula diam. Curabitur non libero et libero pretium scelerisque. Praesent varius semper consequat. Donec at rutrum ligula. Donec rhoncus elementum ligula. Duis porta pharetra massa. Duis sagittis orci a mauris imperdiet.",
       "tres": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum fermentum luctus. Mauris sed ligula diam. Curabitur non libero et libero pretium scelerisque. Praesent varius semper consequat. Donec at rutrum ligula. Donec rhoncus elementum ligula. Duis porta pharetra massa. Duis sagittis orci a mauris imperdiet."
     }
+  },
+  "members": {
+    "title": "Team"
   }
 }

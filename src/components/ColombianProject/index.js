@@ -13,10 +13,6 @@ export function ColombianProject({ key, project, setItem, setOpenModal }) {
       <figure onClick={()=> onShowDetail(project)}>
         <img src={project.img} alt="logo" />
       </figure>
-      <figcaption className="project-card-onhover">
-        <p className="project-card-onhover__title">{project.name}</p>
-        <p className="project-card-onhover__description">{project.slogan}</p>
-      </figcaption>
     </div>
   );
 }

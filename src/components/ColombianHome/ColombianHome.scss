@@ -206,6 +206,37 @@
         color: #000000;
       }
     }
+  }
 
+  &-members {
+    height: 549px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+      margin: 0px;
+      margin-top: 17px;
+      margin-bottom: 17px;
+      padding: 0px;
+      height: 59px;
+      text-align: center;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 40px;
+      line-height: 59px;
+      color: #000000;
+    }
+
+    &__vector {
+      margin: 0px;
+      margin-bottom: 102px;
+      padding: 0px;
+      width: 229.5px;
+      height: 0px;
+      border: 5px solid #FF3C82;
+      border-radius: 5px;
+      background-color: #FF3C82;
+    }
   }
 }

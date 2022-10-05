@@ -1,24 +1,36 @@
 .team {
-  
+  margin: 0px;
+  padding: 0px;
+  height: 549px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   &__title {
-    font-size: 46px;
-    padding: 0 16px;
-    margin: 30px 0;
+    margin: 0px;
+    margin-top: 46px;
+    margin-bottom: 20px;
+    padding: 0px;
+    width: 357px;
+    height: 59px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 59px;
+    color: #000000;
   }
 
-  &__description {
-    font-size: 16px;
-    line-height: 22.5px;
-    width: 70%;
+  &__vector {
+    margin-bottom: 101px;
+    width: 229.5px;
+    height: 0px;
+    border: 5px solid #FF3C82;
+    border-radius: 5px;
+    background-color: #FF3C82;
   }
-
-  &__subtitle {
-    font-size: 24px;
-    margin-top: 40px;
-    margin-bottom: 24px;
-    padding: 0 16px;
-  }
-
+  
   &-container__loading {
     margin-top: 160px;
     margin-bottom: 160px;

@@ -1,7 +1,6 @@
 import "./ColombianTeam.scss";
 import team from "../../asserts/json/team.json";
 import React from "react";
-import { ColombianBanner } from "../../shared/ColombianBanner";
 import { ColombianLoading } from "../../shared/ColombianLoading";
 import { ColombianProjects } from "../ColombianProjects";
 import { ColombianProject } from "../ColombianProject";
@@ -17,7 +16,7 @@ export function ColombianTeam() {
   return (
     <div className="team">
       <h1 className="team__title">{team.information.title}</h1>
-      <p className="team__description">{team.information.description}</p>
+      <div className="team__vector"></div>
       {loading ? (
         <div className="team-container__loading">
           <ColombianLoading />
