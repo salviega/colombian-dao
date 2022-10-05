@@ -64,6 +64,34 @@ export function ColombianHome() {
       <div className='home-members'>
         <p className='home-members__title'>{home.members.title}</p>
         <div className='home-members__vector'></div>
+        <div className="home-members__container">
+            <figure>
+              <img src={banner} alt="imagen" />
+            </figure>
+            <figure>
+              <img src={banner} alt="imagen" />
+            </figure>
+            <figure>
+              <img src={banner} alt="imagen" />
+            </figure>
+            <figure>
+              <img src={banner} alt="imagen" />
+            </figure>
+          </div>
+      </div>
+      <div className='home-whitepaper'>
+        <div className='home-whitepaper-container'>
+          <p className='home-whitepaper-container__title'>sss</p>
+          <p className='home-whitepaper-container__description'>aaa</p>
+        </div>
+        <div className='home-whitepaper-container'>
+          <p className='home-whitepaper-container__title'>sss</p>
+          <p className='home-whitepaper-container__description'>aaa</p>
+        </div>
+        <div className='home-whitepaper-container'>
+          <p className='home-whitepaper-container__title'>sss</p>
+          <p className='home-whitepaper-container__description'>aaa</p>
+        </div>
       </div>
     </div>
   );
