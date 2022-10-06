@@ -5,38 +5,34 @@
     "description": "As the underlying technology develops, a growing pool of artists are selling verified, immutable works to art lovers and speculators, and the space as a whole is waking up to the power and potential of decentralized networks and currencies. With creators and collectors generating meaningful revenue through an entirely digital ecosystem, the tokenization of gifs, memes, and MP4s is emerging as the most exciting and relevant blockchain use case. From SuperRare to Josie to JOY, browse and trade NFTs from some of the world's top crypto artists on OpenSea."
   },
 
-  "teams": [
-    {
-      "name": "Biolumen",
-      "slogan": "Conservacion del eje cafetero",
-      "description": "love tech and lifelong learning, currently learning blockchain development and studying Mechatronics Engineering , also worked with frontend, backend, a bit of devops. knowledge in Machine learning , Blockchain and web3 and trading, microcontrollers, design and 3D software. love tech and lifelong learning, currently learning blockchain development and studying Mechatronics Engineering , also worked with frontend, backend, a bit of devops. knowledge in Machine learning , Blockchain and web3 and trading, microcontrollers, design and 3D software.",
-      "img": "https://pbs.twimg.com/profile_banners/1504529951332212741/1649038602/1500x500",
-      "role": "Frontend developer, researching in machine learning, computer vision and blockchain technologies.",
+  "teams": {
+    "entropy": {
+      "name": "Entropy",
+      "slogan": "",
+      "img": "../../asserts/images/logo-entropy.png",
+      "description": "Frontend developer, researching in machine learning, computer vision and blockchain technologies.",
       "github": "https://twitter.com/biolumen_col"
-    },    
-    {
-      "name": "Grupo éxito",
-      "slogan": "Compra barato",
-      "description": "love tech and lifelong learning, currently learning blockchain development and studying Mechatronics Engineering , also worked with frontend, backend, a bit of devops. knowledge in Machine learning , Blockchain and web3 and trading, microcontrollers, design and 3D software.",
-      "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdceff.org%2Fwp-content%2Fuploads%2F2017%2F01%2Fgrupo-exito.png&f=1&nofb=1&ipt=d3cfe504935e5617f2a2da2abf1db9021f7dac5229ed84225fb21aef99cce789&ipo=images",
-      "role": "Frontend developer, researching in machine learning, computer vision and blockchain technologies.",
-      "github": "https://www.grupoexito.com.co/en"
     },
-    {
-      "name": "Aviatur",
-      "slogan": "Viajes increibles",
-      "description": "love tech and lifelong learning, currently learning blockchain development and studying Mechatronics Engineering , also worked with frontend, backend, a bit of devops. knowledge in Machine learning , Blockchain and web3 and trading, microcontrollers, design and 3D software.",
-      "img": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.agenciasdeviajesmadrid.com%2Fwp-content%2Fuploads%2Fcache%2Fimages%2Faviatur-agencia-de-viajes-espana%2Faviatur-agencia-de-viajes-espana-1599183384.jpg&f=1&nofb=1&ipt=cb577bd766da938b02ed104ad2d30c2e99d2c30349ecc20711e695c9e596798d&ipo=images",
-      "role": "Frontend developer, researching in machine learning, computer vision and blockchain technologies.",
-      "github": "https://www.aviatur.com/"
+    "tfi": {
+      "name": "TFI",
+      "slogan": "Tourism and Culture",
+      "img": "../../asserts/images/logo-entropy.png",
+      "description": "Frontend developer, researching in machine learning, computer vision and blockchain technologies.",
+      "github": "https://twitter.com/biolumen_col"
     },
-    {
-      "name": "Parque Nacional Tayrona, Colombia",
-      "slogan": "A Hundred Places in One",
-      "description": "love tech and lifelong learning, currently learning blockchain development and studying Mechatronics Engineering , also worked with frontend, backend, a bit of devops. knowledge in Machine learning , Blockchain and web3 and trading, microcontrollers, design and 3D software.",
-      "img": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fintheknowtraveler.com%2Fwp-content%2Fuploads%2F2020%2F02%2FAriellaOceansMtsBolulders900x600.jpg&f=1&nofb=1&ipt=315418f5332e84c1622d70f19ec92dd68ef12b626d36f8f1ad14a946455ccdb4&ipo=images",
-      "role": "Frontend developer, researching in machine learning, computer vision and blockchain technologies.",
-      "github": "https://www.parquetayrona.com/en/"
+    "aroundGo": {
+      "name": "Around Go",
+      "slogan": "fadfas ",
+      "img": "../../asserts/images/logo-entropy.png",
+      "description": "Frontend developer, researching in machine learning, computer vision and blockchain technologies.",
+      "github": "https://twitter.com/biolumen_col"
+    },
+    "biolumen": {
+      "name": "Biolumen",
+      "slogan": "fsdfsdfsdfds",
+      "img": "../../asserts/images/logo-entropy.png",
+      "description": "Frontend developer, researching in machine learning, computer vision and blockchain technologies.",
+      "github": "https://twitter.com/biolumen_col"
     }
-  ]
+  }
 }

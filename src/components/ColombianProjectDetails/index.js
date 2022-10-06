@@ -27,7 +27,7 @@ export function ColombianProjectDetails({ item: project, setOpenModal }) {
         <div className="collection-modal-container__vector"></div>
         <div className="collection-modal-container-project">
           <figure>
-            <img src={project.img} alt="logo" />
+            <img src={project.logo} alt="logo" />
           </figure>
           <p className="collection-modal-container-project__description">
             {project.description}

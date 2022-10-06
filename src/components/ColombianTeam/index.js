@@ -6,11 +6,14 @@ import { ColombianProjects } from "../ColombianProjects";
 import { ColombianProject } from "../ColombianProject";
 import { ColombianModal } from "../../shared/ColombianModal";
 import { ColombianProjectDetails } from "../ColombianProjectDetails";
+import logoEntropy from "../../asserts/images/logo-entropy.png";
+import logoTfi from "../../asserts/images/logo-tfi.png";
+import logoAroundGo from "../../asserts/images/logo-around-go.png";
+import logoBiolumen from "../../asserts/images/logo-biolumen.png";
 
 export function ColombianTeam() {
   const [item, setItem] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState(false);
   const [openModal, setOpenModal] = React.useState(false);
 
   return (
@@ -23,11 +26,10 @@ export function ColombianTeam() {
         </div>
       ) : (
         <ColombianProjects setItem={setItem} setOpenModal={setOpenModal}>
-          {team.teams
-            ? team.teams.map((project, index) => (
-                <ColombianProject key={index} project={project} />
-              ))
-            : "There don'projects"}
+          <ColombianProject project={team.teams.entropy} img={logoEntropy}/>
+          <ColombianProject project={team.teams.tfi} img={logoTfi}/>
+          <ColombianProject project={team.teams.aroundGo} img={logoAroundGo}/>
+          <ColombianProject project={team.teams.biolumen} img={logoBiolumen}/>
         </ColombianProjects>
       )}
       {openModal && (
