@@ -107,8 +107,8 @@ export function ColombianCollections() {
 
   return (
     <React.Fragment>
-      <div className="collection">
         <ColombianBanner banner={banner} />
+      <div className="collection">
         <div className="collection-head">
           <p className="collection-head__title">{collection.title}</p>
           <p className="collection-head__author">{collection.author}</p>

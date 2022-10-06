@@ -1,12 +1,14 @@
 .collection {
+margin: 0px;
+padding: 0px;
   
   &-head {
     margin: 0px;
+    margin-top: 121px;
     padding: 0px;
 
     &__title {
       margin: 0px;
-      margin-left: 94px;
       padding: 0px;
       height: 59px;
       font-style: normal;
@@ -18,7 +20,6 @@
 
     &__author {
       margin: 0px;
-      margin-left: 94px;
       margin-bottom: 14px;
       padding: 0px;
       height: 36px;
@@ -31,7 +32,6 @@
     
     &__description {
       margin: 0px;
-      margin-left: 94px;
       margin-right: 106px;
       margin-bottom: 14px;
       padding: 0px;

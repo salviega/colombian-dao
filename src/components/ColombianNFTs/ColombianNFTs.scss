@@ -1,7 +1,6 @@
 .collection-cards {
   margin-left: 81;
   margin-bottom: 24px;
-  height: 423px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,7 +11,6 @@
   .collection-cards {
     margin-left: 81;
     margin-bottom: 24px;
-    height: 423px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 42px;
@@ -26,10 +24,9 @@
   .collection-cards {
     margin-left: 81;
     margin-bottom: 24px;
-    height: 423px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 42px;
+    grid-gap: 10.5px;
     align-items: center;
     justify-items: center;
   }
