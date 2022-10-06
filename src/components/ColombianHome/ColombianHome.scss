@@ -1,5 +1,4 @@
 .home {
-  //padding: 89px;
 
   &-definition {
     margin: 0px;
@@ -260,44 +259,6 @@
           height: 252px;
           border-radius: 50%;
         }
-      }
-    }
-  }
-
-  &-whitepaper {
-    height: 931px;
-    
-    &-container {
-      margin: 0px;
-      margin-left: 82px;
-      margin-right: 63px;
-      margin-bottom: 42.85px;
-      padding: 0px;
-      width: 867.670px;
-      height: 167.02px;
-      border-bottom: 1px solid #000000;
-      
-      &__title {
-        margin: 0px;
-        padding: 0px;
-        width: 450.42px;
-        height: 59.69px;
-        font-style: normal;
-        font-weight: 800;
-        font-size: 40px;
-        line-height: 59px;
-        color: #000000;
-      }
-
-      &__description {
-        margin: 0px;
-        padding: 0px;
-        height: 128.43px;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 36px;
-        color: #000000;
       }
     }
   }

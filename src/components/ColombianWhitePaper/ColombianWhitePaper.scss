@@ -1,0 +1,75 @@
+.home-whitepaper {
+  
+  &-container {
+    margin: 0px;
+    margin-left: 82px;
+    margin-right: 63px;
+    margin-bottom: 42.85px;
+    padding: 0px;
+    width: 867.670px;
+    height: 167.02px;
+    border-bottom: 1px solid #000000;
+    
+    &__title {
+      margin: 0px;
+      padding: 0px;
+      width: 450.42px;
+      height: 59.69px;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 40px;
+      line-height: 59px;
+      color: #000000;
+    }
+
+    &__description {
+      margin: 0px;
+      padding: 0px;
+      height: 128.43px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 36px;
+      color: #000000;
+    }
+  }
+
+  &-download {
+    margin: 0px;
+    margin-left: 82px;
+    margin-bottom: 25px;
+    padding: 0px;
+    width: 685px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+
+    figure {
+      margin: 0px;
+      margin-right: 15px;
+      padding: 0px;
+      width: 31px;
+      height: 30.94px;
+
+      image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__title {
+      margin: 0px;
+      padding: 0px;
+      height: 46.78px;
+      display: flex;
+      align-items: center;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 42px;
+      line-height: 62px;
+      color: #9203F1;
+    }
+  }
+}

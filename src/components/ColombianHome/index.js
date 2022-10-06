@@ -6,6 +6,7 @@ import banner from "../../asserts/images/banner-collection-horizontal.jpg";
 import { ColombianWallet } from "../ColombianWallet";
 import { ColombianRoadMap } from '../ColombianRoadMap';
 import { ColombianTeam } from '../ColombianTeam';
+import { ColombianWhitePaper } from '../ColombianWhitePaper';
 
 export function ColombianHome() {
 
@@ -79,20 +80,7 @@ export function ColombianHome() {
             </figure>
           </div>
       </div>
-      <div className='home-whitepaper'>
-        <div className='home-whitepaper-container'>
-          <p className='home-whitepaper-container__title'>sss</p>
-          <p className='home-whitepaper-container__description'>aaa</p>
-        </div>
-        <div className='home-whitepaper-container'>
-          <p className='home-whitepaper-container__title'>sss</p>
-          <p className='home-whitepaper-container__description'>aaa</p>
-        </div>
-        <div className='home-whitepaper-container'>
-          <p className='home-whitepaper-container__title'>sss</p>
-          <p className='home-whitepaper-container__description'>aaa</p>
-        </div>
-      </div>
+      <ColombianWhitePaper />
     </div>
   );
 }
