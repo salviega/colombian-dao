@@ -1,36 +1,52 @@
 .home-whitepaper {
-  
   &-container {
     margin: 0px;
     margin-left: 82px;
     margin-right: 63px;
     margin-bottom: 42.85px;
     padding: 0px;
-    width: 867.670px;
+    width: 867.67px;
     height: 167.02px;
+    align-items: center;
     border-bottom: 1px solid #000000;
     
-    &__title {
-      margin: 0px;
-      padding: 0px;
-      width: 450.42px;
-      height: 59.69px;
-      font-style: normal;
-      font-weight: 800;
-      font-size: 40px;
-      line-height: 59px;
-      color: #000000;
-    }
+    &-head {
+      display: flex;
+      align-items: center;
 
-    &__description {
-      margin: 0px;
-      padding: 0px;
-      height: 128.43px;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 24px;
-      line-height: 36px;
-      color: #000000;
+      figure {
+        margin: 0px;
+        padding: 0px;
+        width: 21.58px;
+        height: 20.33px;
+
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &__title {
+        margin: 0px;
+        padding: 0px;
+        height: 59.69px;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 30px;
+        line-height: 59px;
+        color: #000000;
+      }
+
+      &__description {
+        margin: 0px;
+        padding: 0px;
+        height: 128.43px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 36px;
+        color: #000000;
+      }
     }
   }
 
@@ -69,7 +85,7 @@
       font-weight: 800;
       font-size: 42px;
       line-height: 62px;
-      color: #9203F1;
+      color: #9203f1;
     }
   }
 }

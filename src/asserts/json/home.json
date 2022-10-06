@@ -33,5 +33,27 @@
   },
   "members": {
     "title": "Team"
-  }
+  },
+  "whitepaper": [
+    {
+      "title": "¿Cómo funciona CREA CO?",
+      "description": "Somos la primera marca país descentralizada de industrias creativas. Apoyamos el crecimiento de proyectos de este sector en la web 3 para su promoción, comercialización, visibilización y financiación. Contamos con un launchpad de proyectos curados a través del sello Crea Co, potencializando su sostenibilidad, autonomía y gobernanza."
+    },
+    {
+      "title": "¿Qué beneficios obtengo por comprar el NFT?",
+      "description": "Acceso exclusivo a la ICO de CREA CO,Ingreso directo a todas las NFT whitelist de los proyectos aliados con el sello Crea Co"
+    },
+    {
+      "title": "¿Cómo puedo invertir en CREA CO?",
+      "description": "Adquiere un NFT de la colección “Colombia Intangible” o ingresa a la whitelist para ser el primero en conocer sobre nuestro token de participación."
+    },
+    {
+      "title": "¿Cómo puedo aplicar con mi proyecto?",
+      "description": "Contactános a través de nuestros canales de comunicación. Dejanós saber más de tu proyecto."
+    },
+    {
+      "title": "¿Para quién está dirigido?",
+      "description": "Podrás aplicar y subir tu proyecto en Crea Co si tienes un proyecto cultural, artístico o turístico en Colombia. Podrás invertir si crees en el impulso que el ecosistema cripto puede aportar al sector en Colombia."
+    }
+  ]
 }

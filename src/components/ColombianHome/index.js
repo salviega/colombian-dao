@@ -80,7 +80,7 @@ export function ColombianHome() {
             </figure>
           </div>
       </div>
-      <ColombianWhitePaper />
+      <ColombianWhitePaper home={home}/>
     </div>
   );
 }
