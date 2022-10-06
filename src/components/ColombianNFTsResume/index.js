@@ -18,10 +18,10 @@ export function ColombianNFTsResume({ currency, purchasedItems, setItem, setOpen
   };
 
   return (
-    <div className='collection-container'>
-      <h1 className="collection-stats__title">Bought NFTs</h1>
-      <div className="collection-stats">
-        <table className="collection-stats__table">
+    <div className="resumen">
+      <h1 className="resumen__title">Lastest transaccion</h1>
+      <div className="resumen-stats">
+        <table className="resumen-stats__table">
           <thead>
             <tr>
               <th>item IDs</th>
@@ -31,7 +31,7 @@ export function ColombianNFTsResume({ currency, purchasedItems, setItem, setOpen
               <th>Buyers</th>
             </tr>
           </thead>
-          <tbody id="offerd-table">
+          <tbody>
             {purchasedItems.map((boughtItem, index) => (
               <tr key={index}>
                 <td>{boughtItem.itemId}</td>

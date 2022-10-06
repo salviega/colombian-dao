@@ -1,15 +1,77 @@
 .collection {
   
-  &__title {
-    font-size: 46px;
-    padding: 0 16px;
-    margin: 30px 0;
+  &-head {
+    margin: 0px;
+    padding: 0px;
+
+    &__title {
+      margin: 0px;
+      margin-left: 94px;
+      padding: 0px;
+      height: 59px;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 40px;
+      line-height: 59px;
+      color: #000000;
+    }
+
+    &__author {
+      margin: 0px;
+      margin-left: 94px;
+      margin-bottom: 14px;
+      padding: 0px;
+      height: 36px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 36px;
+      color: #000000;
+    }
+    
+    &__description {
+      margin: 0px;
+      margin-left: 94px;
+      margin-right: 106px;
+      margin-bottom: 14px;
+      padding: 0px;
+      width: 892.67px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 36px;
+      color: #000000;
+    }
   }
 
-  &__description {
-    font-size: 16px;
-    line-height: 22.5px;
-    width: 70%;
+  &-container {
+    height: 1211px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+      margin: 0px;
+      margin-bottom: 21px;
+      padding: 0px;
+      width: 342px;
+      height: 59px;
+      text-align: center;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 40px;
+      line-height: 59px;
+      color: #000000;
+    }
+
+    &__vector {
+      margin-bottom: 51px;
+      width: 229.5px;
+      height: 0px;
+      border: 5px solid #FF3C82;
+      border-radius: 5px;
+      background-color: #FF3C82;
+    }
   }
 
   &__subtitle {
@@ -31,5 +93,3 @@
     width: auto;
   }
 }
-
-

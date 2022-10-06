@@ -1,22 +1,28 @@
 .collection-card {
-  margin-top: 10px;
-  border-radius: 6px;
-  height: 431px;
-  width: 295px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  width: 288px;
+  height: 423px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 5px #9203F1;
+  border-radius: 40px;
 
   figure {
-    cursor: pointer;
     margin: 0px;
+    margin-top: 23px;
+    margin-bottom: 10px;
     padding: 0px;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    height: 285px;
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+    border-radius: 40px;
     overflow: hidden;
 
     img {
-      width: 295px;
-      height: 295px;
+      width: 100%px;
+      height: 100%px;
       transition: transform 0.3s ease;
 
       &:hover {
@@ -26,87 +32,94 @@
   }
 
   &-description {
-    width: 271px;
-    height: 112px;
-    margin: 12px;
+    margin-bottom: 14px;
+    width: 244px;
+    height: 72px;
+    display: flex;
+    flex-direction: column;
 
     &__title {
-      font-size: 16px;
-      font-weight: bold;
-      margin: 12px 0px;
-      max-width: max-content;
-
-      p {
-        max-width: max-content;
-      }
-    }
-
-    &__price {
-      font-size: 12px;
       margin: 0px;
-      max-width: max-content;
-
-      p {
-        max-width: max-content;
-      }
+      padding: 0px;  
+      width: 92px;
+      height: 36px;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 36px;
+      color: #000000;
     }
 
     &-container {
       margin: 0px;
-      padding-left: 3px;
+      padding: 0px;
       display: flex;
-      align-items: center;
-      column-gap: 8px;
-      max-width: max-content;
+      justify-content: space-between;
 
-      &__attribute {
-        font-size: 14px;
-        margin: 12px 0px;
-        max-width: max-content;
-
-        p {
-          max-width: max-content;
+      &-value {
+        width: max-content;
+        display: flex;
+        align-items: center;
+      
+        &__icon {
+          margin: 0px;
+          margin-right: 7.16px;
+          padding: 0px;  
+          width: 14.84px;
+          height: 25px;
+        }
+  
+        &__price {
+          margin: 0px;
+          padding: 0px;  
+          width: 82px;
+          height: 36px;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 24px;
+          line-height: 36px;
+          color: #000000;
         }
       }
 
       &__currency {
-        color: #b0b0b0;
-        font-size: 12px;
-        margin: 12px 0px;
-        padding-top: 3px;
-        max-width: max-content;
-
-        p {
-          max-width: max-content;
-        }
+        margin: 0px;
+        padding: 0px;  
+        height: 36px;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 36px;
+        text-align: right;
+        color: #8E8E8E;
       }
     }
 
-    &__buy {
-      position: relative;
-      left: 30%;
-      top: -3.5%;
-      display: flex;
-      align-content: center;
-      justify-content: center;
-      max-width: max-content;
-      margin: 0;
-      padding: 0;
 
+    &__buy {
+      margin: 0;
+      margin-bottom: 16px;
+      padding: 0;
+      width: 133px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
       button {
         cursor: pointer;
-        display: inline-block;
-        text-decoration: none;
-        background: #fff;
-        border: 2px solid #69a6ce;
-        color: #69a6ce;
-        padding: 10px 25px;
-        border-radius: 25px;
+        background: #9203F1;
+        border-radius: 150px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 36px;
+        color: #FFFFFF;
         transition: all 0.27s ease;
 
         &:hover {
-          color: #fff;
-          background-color: lighten(#69a6ce, 15%);
+          color: #FFFFFF;
+          background-color: #FF3C82;
         }
       }
     }

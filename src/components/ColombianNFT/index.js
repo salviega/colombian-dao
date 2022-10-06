@@ -47,23 +47,24 @@ export function ColombianNFT({ key, item, currency, setItem, setLoading, setSinc
       </figure>
       <div className="collection-card-description">
         <p className="collection-card-description__title">{item.title}</p>
-        <p className="collection-card-description__price">Price</p>
         <div className="collection-card-description-container">
-          <FontAwesomeIcon
-            icon={faEthereum}
-            className="collection-card-description-container__attribute"
-          />
-          <p className="collection-card-description-container__attribute">
-            {(parseInt(item.price) / currency).toFixed(3)}
-          </p>
+          <div className="collection-card-description-container-value">
+            <FontAwesomeIcon
+              icon={faEthereum}
+              className="collection-card-description-container-value__icon"
+            />
+            <p className="collection-card-description-container-value__price">
+              ${(parseInt(item.price) / currency).toFixed(3)}
+            </p>
+          </div>
           <p className="collection-card-description-container__currency">
-            ${item.price}
+            ${item.price} usd
           </p>
         </div>
+      </div>
         <div className="collection-card-description__buy">
           <button onClick={onBuy}>Buy now</button>
         </div>
-      </div>
     </div>
   );
 }
