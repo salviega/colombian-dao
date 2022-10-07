@@ -6,6 +6,7 @@ import { ColombianProjects } from "../ColombianProjects";
 import { ColombianProject } from "../ColombianProject";
 import { ColombianModal } from "../../shared/ColombianModal";
 import { ColombianProjectDetails } from "../ColombianProjectDetails";
+import logoMincultura from "../../asserts/images/logo-mincultura.jpeg";
 import logoEntropy from "../../asserts/images/logo-entropy.png";
 import logoTfi from "../../asserts/images/logo-tfi.png";
 import logoAroundGo from "../../asserts/images/logo-around-go.png";
@@ -26,9 +27,9 @@ export function ColombianTeam() {
         </div>
       ) : (
         <ColombianProjects setItem={setItem} setOpenModal={setOpenModal}>
+          <ColombianProject project={team.teams.mintic} img={logoMincultura}/>
           <ColombianProject project={team.teams.entropy} img={logoEntropy}/>
-          <ColombianProject project={team.teams.tfi} img={logoTfi}/>
-          <ColombianProject project={team.teams.aroundGo} img={logoAroundGo}/>
+          <ColombianProject project={team.teams.aroundGo} img={logoTfi}/>
           <ColombianProject project={team.teams.biolumen} img={logoBiolumen}/>
         </ColombianProjects>
       )}

@@ -7,6 +7,9 @@ import { ColombianWallet } from "../ColombianWallet";
 import { ColombianRoadMap } from '../ColombianRoadMap';
 import { ColombianTeam } from '../ColombianTeam';
 import { ColombianWhitePaper } from '../ColombianWhitePaper';
+const gifPaola = require('../../asserts/gif/gifPaola.gif')
+const gifSantiago = require('../../asserts/gif/gifSantiago.gif')
+
 
 export function ColombianHome() {
 
@@ -67,10 +70,10 @@ export function ColombianHome() {
         <div className='home-members__vector'></div>
         <div className="home-members__container">
             <figure>
-              <img src={banner} alt="imagen" />
+              <img src={gifPaola} alt="imagen" />
             </figure>
             <figure>
-              <img src={banner} alt="imagen" />
+              <img src={gifSantiago} alt="imagen" />
             </figure>
             <figure>
               <img src={banner} alt="imagen" />

@@ -6,32 +6,28 @@
   },
 
   "teams": {
-    "entropy": {
-      "name": "Entropy",
-      "slogan": "",
-      "img": "../../asserts/images/logo-entropy.png",
-      "description": "Frontend developer, researching in machine learning, computer vision and blockchain technologies.",
+    "mintic": {
+      "name": "Ministerio de Cultura de Colombia.",
+      "description": "El proyecto es ganador del programa Estímulos 2022 del Ministerio de Cultura de Colombia. Gracias a este programa se construyó la primera DAO análoga con jóvenes de 18 a 28 años en lo que llamamos un “EntropyLab”, esto con el fin de realizar las bases para el desarrollo de lo que es la Marca País Descentralizada y dar solución a la limitada capacidad para la  monetización de intangibles relacionados con la economía de servicios de las industrias creativas. El programa da como resultado el prototipo de CREA CO.",
       "github": "https://twitter.com/biolumen_col"
     },
-    "tfi": {
-      "name": "TFI",
-      "slogan": "Tourism and Culture",
+    "entropy": {
+      "name": "Entropy Travel",
+      "slogan": "",
       "img": "../../asserts/images/logo-entropy.png",
-      "description": "Frontend developer, researching in machine learning, computer vision and blockchain technologies.",
+      "description": "Cofundador del proyecto, liderado por Santiago Garzón. Entropy surge para resolver la baja innovación de experiencias culturales y turísticas, a raíz de esto crea la metodología principal del “EntropyLab”, cuyo ejercicio académico da como solución la Marca País Descentralizada.",
       "github": "https://twitter.com/biolumen_col"
     },
     "aroundGo": {
-      "name": "Around Go",
-      "slogan": "fadfas ",
+      "name": "TFI LATAM & GoAround",
       "img": "../../asserts/images/logo-entropy.png",
-      "description": "Frontend developer, researching in machine learning, computer vision and blockchain technologies.",
+      "description": "Cofundadores del proyecto, liderado por Paola López y María Alejandra Latorre. En su labor misional mueven la industria creativa hacia las oportunidades que brinda la economía digital. En ese sentido, han apoyado con experiencia, recursos y gestión el desarrollo de la Marca País Descentralizada. Cuentan con presencia en cuatro países de latinoamérica, en donde se planea replicar el ejercicio de Crea Co.",
       "github": "https://twitter.com/biolumen_col"
     },
     "biolumen": {
       "name": "Biolumen",
-      "slogan": "fsdfsdfsdfds",
       "img": "../../asserts/images/logo-entropy.png",
-      "description": "Frontend developer, researching in machine learning, computer vision and blockchain technologies.",
+      "description": "Aliados en la construcción académica y en la colección de “Colombia Intangible”. Son los creadores de “Little Guardians” una colección de NFTs que resalta los valores culturales y naturales del eje cafetero y que representa su sostenibilidad turística y medio ambiental.",
       "github": "https://twitter.com/biolumen_col"
     }
   }
