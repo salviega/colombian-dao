@@ -95,6 +95,26 @@
           outline: 0.1px solid black;
         }
       }
+
+      &__address {
+        margin: 0px;
+        padding: 0px;
+        width: 56px;
+        height: 36px;
+        cursor: pointer;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 36px;
+        color: #000000;
+        
+        &:hover {
+          width: max-content;
+          border: 1.5px solid black;
+          border-bottom: 2px solid black;
+          outline: 0.1px solid black;
+        }
+      }
     }
 
     &-footer {

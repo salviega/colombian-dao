@@ -39,7 +39,7 @@ export function ColombianNFTsResume({
               <p className="resumen-list-body__item">{boughtItem.title}</p>
               <p className="resumen-list-body__item">   {(parseInt(boughtItem.price) / currency + 0.001).toFixed(3)}</p>
               <p className="resumen-list-body__show" onClick={() => {onShowDetail(boughtItem);}}>show</p>
-              <a className="resumen-list-body__item" href={`https://goerli.etherscan.io/address/${boughtItem.buyer}`}> {boughtItem.buyer.slice(0, 4) + "..." + boughtItem.buyer.slice(38)}</a>
+              <a className="resumen-list-body__address" href={`https://goerli.etherscan.io/address/${boughtItem.buyer}`}> {boughtItem.buyer.slice(0, 4) + "..." + boughtItem.buyer.slice(38)}</a>
             </div>
           ))}
           <div className='resumen-list-footer'>
