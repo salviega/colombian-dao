@@ -48,57 +48,56 @@ export function ColombianNFTDetails({
   };
 
   return (
-    <div className="collection-modal">
-      <div className="collection-modal__cancel" onClick={closeModal}>
+    <div className="collection-modal-container">
+      <div className="collection-modal-container__cancel" 
+        onClick={closeModal}>
         <FontAwesomeIcon icon={faXmark} />
       </div>
-      <div className="collection-modal__header">
+      <div className="collection-modal-container-content">
         <figure>
           <img src={item.url} alt="logo" />
         </figure>
-        <div className="collection-modal-description">
-          <p className="collection-modal-description-container__title">
-            {item.title}
-          </p>
-          <p className="collection-modal-description-container__price">Price</p>
-          <div className="collection-modal-description-sale">
+        <div className="collection-modal-container-content-metadata">
+          <p className="collection-modal-container-content-metadata__title">{item.title}</p>
+          <p className="collection-modal-container-content-metadata__price">Price</p>
+          <div className="collection-modal-container-content-metadata-sale">
             <FontAwesomeIcon
               icon={faEthereum}
-              className="collection-modal-description-sale__attribute"
+              className="collection-modal-container-content-metadata-sale__icon"
             />
-            <p className="collection-card-description-sale__attribute">
+            <p className="collection-modal-container-content-metadata-sale__icon">
               {(parseInt(item.price) / currency ).toFixed(3)}
             </p>
-            <p className="collection-modal-description-sale__currency">
+            <p className="collection-modal-container-content-metadata-sale__currency">
               ${parseInt(item.price).toFixed(2)}
             </p>
           </div>
-          <div className="collection-modal-description-container">
-            <p className="collection-modal-description-container__attribute">
+          <div className="collection-modal-container-content-metadata-container">
+            <p className="collection-modal-container-content-metadata-container__contract">
               Contract Address{" "}
               <a href={`https://goerli.etherscan.io/address/${item.contract}`}>
                 {" "}
                 {item.contract.slice(0, 6) + "..." + item.contract.slice(36)}
               </a>
             </p>
-            <p className="collection-modal-description-container__attribute">
+            <p className="collection-modal-container-content-metadata-container__item">
               Token ID <p>{item.tokenId}</p>
             </p>
-            <p className="collection-modal-description-container__attribute">
+            <p className="collection-modal-container-content-metadata-container__item">
               Token Standard <p>{item.tokenStandard}</p>
             </p>
-            <p className="collection-modal-description-container__attribute">
+            <p className="collection-modal-container-content-metadata-container__item">
               Blockchain <p>{item.blockchain}</p>
             </p>
           </div>
         </div>
       </div>
-      <p className="collection-modal-description__text">{item.description}</p>
-      <div className="collection-modal-description-buy">
+      <p className="collection-modal-container__description">{item.description}</p>
+      <div className="collection-modal-container-buy">
         <button>
           <FontAwesomeIcon
             icon={faWallet}
-            className="collection-modal-description-buy__icon"
+            className="collection-modal-container-metadata-buy__icon"
             onClick={buyItem}
           />
           Buy now
