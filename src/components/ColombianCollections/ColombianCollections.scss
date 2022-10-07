@@ -1,15 +1,16 @@
 .collection {
-margin: 0px;
-padding: 0px;
-  
+  margin: 0px;
+  padding: 0px;
+   
   &-head {
     margin: 0px;
-    margin-top: 121px;
     padding: 0px;
 
     &__title {
       margin: 0px;
+      margin-left: 94px;
       padding: 0px;
+      width: 458px;
       height: 59px;
       font-style: normal;
       font-weight: 800;
@@ -20,8 +21,10 @@ padding: 0px;
 
     &__author {
       margin: 0px;
-      margin-bottom: 14px;
+      margin-left: 94px;
+      margin-bottom: 13px;
       padding: 0px;
+      width: 458px;
       height: 36px;
       font-style: normal;
       font-weight: 400;
@@ -29,48 +32,54 @@ padding: 0px;
       line-height: 36px;
       color: #000000;
     }
-    
+
     &__description {
       margin: 0px;
-      margin-right: 106px;
+      margin-left: 94px;
       margin-bottom: 14px;
       padding: 0px;
       width: 892.67px;
       font-style: normal;
       font-weight: 400;
-      font-size: 18px;
+      font-size: 24px;
       line-height: 36px;
       color: #000000;
     }
   }
 
   &-container {
-    height: 1211px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 0px;
+    padding: 0px;
 
-    &__title {
-      margin: 0px;
-      margin-bottom: 21px;
-      padding: 0px;
-      width: 342px;
-      height: 59px;
-      text-align: center;
-      font-style: normal;
-      font-weight: 800;
-      font-size: 40px;
-      line-height: 59px;
-      color: #000000;
-    }
+    &-head {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
-    &__vector {
-      margin-bottom: 51px;
-      width: 229.5px;
-      height: 0px;
-      border: 5px solid #FF3C82;
-      border-radius: 5px;
-      background-color: #FF3C82;
+      &__title {
+        margin: 0px;
+        margin-top: 63px;
+        margin-bottom: 21px;
+        padding: 0px;
+        width: 342px;
+        height: 59px;
+        text-align: center;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 40px;
+        line-height: 59px;
+        color: #000000;
+      }
+  
+      &__vector {
+        margin-bottom: 51px;
+        width: 229.5px;
+        height: 0px;
+        border: 5px solid #ff3c82;
+        border-radius: 5px;
+        background-color: #ff3c82;
+      }
     }
   }
 

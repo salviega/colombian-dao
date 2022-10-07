@@ -1,19 +1,18 @@
 .collection-cards {
-  margin-left: 81;
   margin-bottom: 24px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
   align-items: center;
+  justify-content: center;
 }
 
 // tablets
 @media screen and (min-width: 40em) and (max-width: 63.9em) {
   .collection-cards {
-    margin-left: 81;
     margin-bottom: 24px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 42px;
+    grid-gap: 15px;
     align-items: center;
     justify-items: center;
   }
@@ -22,11 +21,10 @@
 //web
 @media screen and (min-width: 64em) {
   .collection-cards {
-    margin-left: 81;
     margin-bottom: 24px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10.5px;
+    grid-gap: 15px;
     align-items: center;
     justify-items: center;
   }

@@ -1,11 +1,10 @@
 .resumen {
   margin: 0px;
   padding: 0px;
-  height: 719px;
 
   &__title {
     margin: 0px;
-    margin-top: 74px;
+    margin-left: 94px;
     margin-bottom: 20px;
     padding: 0px;
     width: 451px;
@@ -19,20 +18,21 @@
 
   &-list {
     margin: 0px;
+    margin-left: 77px;
+
     padding: 0px;
     height: 566px;
-    width: max-content;
+    width: 854.67px;
     border: 5px solid #ff3c82;
     border-radius: 61px;
     background: #ffffff;
     overflow-x: hidden;
     overflow-y: auto;
-    
+
     &-head {
-      margin: 0px;
-      margin-left: 25px;
+      margin: 0px 25px;
       padding: 0px;
-      width: 756.167px;
+      width: 794.667px;
       height: 76.5px;
       display: flex;
       align-items: center;
@@ -54,10 +54,9 @@
     }
 
     &-body {
-      margin: 0px;
-      margin-left: 25px;
+      margin: 0px 25px;
       padding: 0px;
-      width: 756.167px;
+      width: 794.667px;
       height: 45px;
       display: flex;
       align-items: center;
@@ -76,58 +75,91 @@
         line-height: 36px;
         color: #000000;
       }
+
+      &__show {
+        margin: 0px;
+        padding: 0px;
+        width: 56px;
+        height: 36px;
+        cursor: pointer;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 36px;
+        color: #000000;
+
+        &:hover {
+          width: max-content;
+          border: 1.5px solid black;
+          border-bottom: 2px solid black;
+          outline: 0.1px solid black;
+        }
+      }
     }
-   
 
-    //   th,
-    //   td {
-    //     text-align: center;
-    //     border-bottom: 1px solid black;
-    //     width: 258px;
+    &-footer {
+      margin: 0px 25px;
+      padding: 0px;
+      width: 794.667px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      text-align: center;
+      border-bottom: 1px solid #000000;
 
-    //     a {
-    //       color: #69a6ce;
-    //       text-decoration: none;
-    //       max-width: max-content;
-    //       &:hover {
-    //         border: 1.5px solid black;
-    //         border-bottom: 2px solid black;
-    //         outline: 0.1px solid black;
-    //       }
-    //     }
+      &__item {
+        margin: 0px;
+        padding: 0px;
+        width: 56px;
+        height: 36px;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 36px;
+        color: #000000;
+      }
 
-    //     p {
-    //       cursor: pointer;
-    //       margin: 0px;
-    //       padding: 0px;
-    //       display: inline;
-    //       width: min-content;
-    //       &:hover {
-    //         border: 1.5px solid black;
-    //         border-bottom: 2px solid black;
-    //         outline: 0.1px solid black;
-    //       }
-    //     }
-    //   }
-    // }
+      &__wallet {
+        margin: 0px;
+        padding: 0px;
+        width: 56px;
+        height: 36px;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 36px;
+        color: #9203F1;
 
-    // &-total {
-    //   margin: 0px;
-    //   padding: 0px;
-    //   display: flex;
-    //   align-items: center;
-    //   justify-content: center;
-    //   column-gap: 8px;
+        &:hover {
+          width: max-content;
+          border: 1.5px solid black;
+          border-bottom: 2px solid black;
+          outline: 0.1px solid black;
+        }
 
-    //   &__attribute {
-    //     font-size: 14px;
-    //     margin: 0px;
-    //     max-width: min-content;
-    //   }
+      }
 
-    //   p {
-    //     max-width: min-content;
-    //   }
-    // }
+      &-value {
+        margin: 0px;
+        padding: 0px;
+        width: max-content;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        column-gap: 8px;
+
+        &__item {
+          margin: 0px;
+          padding: 0px;
+          font-style: normal;
+          font-weight: 800;
+          font-size: 14px;
+          line-height: 36px;
+          color: #000000;
+        }
+      }
+    }
   }
 }

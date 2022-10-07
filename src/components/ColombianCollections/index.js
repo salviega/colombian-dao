@@ -107,8 +107,8 @@ export function ColombianCollections() {
 
   return (
     <React.Fragment>
-        <ColombianBanner banner={banner} />
       <div className="collection">
+        <ColombianBanner banner={banner} />
         <div className="collection-head">
           <p className="collection-head__title">{collection.title}</p>
           <p className="collection-head__author">{collection.author}</p>
@@ -117,7 +117,7 @@ export function ColombianCollections() {
           </p>
         </div>
         {error && <ColombianError />}
-        {!loading && !error && auth.user.isAdmin && (
+        {/* {!loading && !error && auth.user.isAdmin && (
           <div className="collection-admin">
             <ColombianSupplyNFTs
               tokenIdCounter={tokenIdCounter}
@@ -125,15 +125,17 @@ export function ColombianCollections() {
               setSincronizedItems={setSincronizedItems}
             />
           </div>
-        )}
+        )} */}
         {loading && !error ? (
           <div className="collection-container__loading">
             <ColombianLoading />
           </div>
         ) : (
           <div className='collection-container'>
-            <p className='collection-container__title'>NFTs on sale</p>
-            <div className='collection-container__vector'></div>
+            <div className='collection-container-head'>
+              <p className='collection-container-head__title'>NFTs on sale</p>
+              <div className='collection-container-head__vector'></div>
+            </div>
             <ColombianNFTs
               currency={currency}
               setItem={setItem}

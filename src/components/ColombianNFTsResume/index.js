@@ -38,30 +38,25 @@ export function ColombianNFTsResume({
               <p className="resumen-list-body__item">{boughtItem.itemId}</p>
               <p className="resumen-list-body__item">{boughtItem.title}</p>
               <p className="resumen-list-body__item">   {(parseInt(boughtItem.price) / currency + 0.001).toFixed(3)}</p>
-              <p className="resumen-list-body__item" onClick={() => {onShowDetail(boughtItem);}}>show</p>
+              <p className="resumen-list-body__show" onClick={() => {onShowDetail(boughtItem);}}>show</p>
               <a className="resumen-list-body__item" href={`https://goerli.etherscan.io/address/${boughtItem.buyer}`}> {boughtItem.buyer.slice(0, 4) + "..." + boughtItem.buyer.slice(38)}</a>
             </div>
           ))}
-          {/* <tr>
-            <td>Total</td>
-            <td>{totalItems}</td>
-            <td>
-              <div className="collection-stats-total">
-                <FontAwesomeIcon
-                  icon={faEthereum}
-                  className="collection-stats-total__attribute"
-                />
-                <p className="collection-modal-description-sale__attribute">
-                  {ethIncome}
-                </p>
-              </div>
-            </td>
-            <td>
-              <a href={`https://goerli.etherscan.io/address/${owner}`}>
-                {owner.slice(0, 4) + "..." + owner.slice(38)}
-              </a>
-            </td>
-          </tr> */}
+          <div className='resumen-list-footer'>
+            <p className="resumen-list-footer__item">Total</p>
+            <p className="resumen-list-footer__item">{totalItems}</p>
+            <div className="resumen-list-footer-value">
+              <FontAwesomeIcon
+                icon={faEthereum}
+                className="resumen-list-footer-value__item"
+              />
+              <p className="resumen-list-footer-value__item">
+                {ethIncome}
+              </p>
+            </div>
+            <a className="resumen-list-footer__wallet" href={`https://goerli.etherscan.io/address/${owner}`}> {owner.slice(0, 4) + "..." + owner.slice(38)}</a>
+            <p className="resumen-list-footer__item">{''}</p>
+          </div>
       </div>
     </div>
   );
