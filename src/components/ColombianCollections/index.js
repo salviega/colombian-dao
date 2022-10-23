@@ -117,7 +117,7 @@ export function ColombianCollections() {
           </p>
         </div>
         {error && <ColombianError />}
-        {/* {!loading && !error && auth.user.isAdmin && (
+        {!loading && !error && auth.user.isAdmin && (
           <div className="collection-admin">
             <ColombianSupplyNFTs
               tokenIdCounter={tokenIdCounter}
@@ -125,7 +125,7 @@ export function ColombianCollections() {
               setSincronizedItems={setSincronizedItems}
             />
           </div>
-        )} */}
+        )}
         {loading && !error ? (
           <div className="collection-container__loading">
             <ColombianLoading />

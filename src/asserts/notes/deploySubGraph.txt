@@ -18,3 +18,4 @@ graph codegen && graph build
 graph deploy --studio <SubGraphProjectName>
 
 
+graph deploy --studio <SUBGRAPH_SLUG>
